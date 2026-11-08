@@ -1,387 +1,5 @@
 {
   "@@locale": "zh",
-  "appName": "OpenList",
-  "desktopShortcut": "桌面快捷方式",
-  "setAdminPassword": "设置Admin密码",
-  "moreOptions": "更多选项",
-  "checkForUpdates": "检查更新",
-  "currentIsLatestVersion": "已经是最新版本",
-  "confirm": "确认",
-  "cancel": "取消",
-  "releasePage": "发布页面",
-  "downloadApk": "下载APK",
-  "about": "关于",
-  "general": "通用",
-  "autoCheckForUpdates": "自动检查更新",
-  "autoCheckForUpdatesDesc": "启动时自动检查更新",
-  "wakeLock": "唤醒锁",
-  "wakeLockDesc": "开启防止锁屏后CPU休眠，保持进程在后台运行。（部分系统可能导致杀后台）",
-  "bootAutoStartService": "开机自启动服务",
-  "bootAutoStartServiceDesc": "在开机后自动启动OpenList服务。（请确保授予自启动权限）",
-  "webPage": "网页",
-  "settings": "设置",
-  "selectAppToOpen": "选择应用打开",
-  "goTo": "前往",
-  "downloadThisFile": "下载此文件吗？",
-  "download": "下载",
-  "copiedToClipboard": "已复制到剪贴板",
-  "importantSettings": "重要",
-  "uiSettings": "界面",
-  "grantManagerStoragePermission": "申请【所有文件访问权限】",
-  "grantStoragePermissionDesc": "挂载本地存储时必须授予，否则无权限读写文件",
-  "grantStoragePermission": "申请【读写外置存储权限】",
-  "grantNotificationPermission": "申请【通知权限】",
-  "grantNotificationPermissionDesc": "用于前台服务保活",
-  "autoStartWebPage": "将网页设置为打开首页",
-  "jumpToOtherApp": "跳转到其他APP ？",
-  "autoStartWebPageDesc": "打开主界面时的首页",
-  "webBrowserStatus": "内置网页浏览器",
-  "running": "运行中",
-  "stopped": "已停止",
-  "stopWebBrowser": "停止",
-  "enableWebBrowser": "启用内置网页浏览器",
-  "enableWebBrowserDesc": "允许网页页面运行内置浏览器",
-  "webBrowserStopped": "内置网页浏览器已停止",
-  "startWebBrowser": "启动网页浏览器",
-  "webBrowserDownloadInProgress": "下载进行中，无法停止浏览器",
-  "dataDirectory": "data 文件夹路径",
-  "setDefaultDirectory": "是否设为初始目录？",
-  "silentJumpApp": "静默跳转APP",
-  "silentJumpAppDesc": "跳转APP时，不弹出提示框",
-  "newVersionFound": "发现新版本",
-  "directDownloadApk": "直接下载APK",
-  "initializingNotificationManager": "初始化通知管理器",
-  "downloadManager": "下载管理",
-  "downloadManagerWithCount": "下载管理({count})",
-  "@downloadManagerWithCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "modifyAdminPassword": "修改Admin密码",
-  "directDownload": "直接下载",
-  "browserDownload": "浏览器下载",
-  "loadDownloadFilesFailed": "加载下载文件失败",
-  "noActiveDownloads": "暂无进行中的下载",
-  "downloadFailed": "下载失败",
-  "startTime": "开始时间",
-  "noCompletedDownloads": "暂无已完成的下载",
-  "completedTime": "完成时间",
-  "size": "大小",
-  "openFile": "打开文件",
-  "deleteRecord": "删除记录",
-  "deleteFile": "删除文件",
-  "confirmClear": "确认清空",
-  "confirmClearAllFiles": "确定要清空所有下载文件吗？此操作不可撤销。",
-  "cleared": "已清空下载目录",
-  "clearFailed": "清空失败",
-  "cancelDownload": "取消下载",
-  "confirmCancelDownload": "确定要取消下载 \"{filename}\" 吗？",
-  "@confirmCancelDownload": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "continueDownload": "继续下载",
-  "confirmDeleteRecord": "确定要删除 \"{filename}\" 的下载记录吗？",
-  "@confirmDeleteRecord": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "delete": "删除",
-  "shareFile": "分享文件",
-  "shareFeatureNotImplemented": "分享功能待实现",
-  "fileInfo": "文件信息",
-  "fileName": "文件名",
-  "modifiedTime": "修改时间",
-  "filePath": "路径",
-  "confirmDelete": "确认删除",
-  "confirmDeleteFile": "确定要删除文件 \"{filename}\" 吗？此操作不可撤销。",
-  "@confirmDeleteFile": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "fileDeleted": "文件已删除",
-  "deleteFailed": "删除失败",
-  "clear": "清空",
-  "noAppToOpenFile": "没有找到可以打开此文件的应用",
-  "viewLocation": "查看位置",
-  "fileNotFound": "文件不存在或已被删除",
-  "noPermissionToOpenFile": "没有权限打开此文件",
-  "openFileFailed": "打开文件失败: {error}",
-  "@openFileFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "fileLocation": "文件位置",
-  "fileSavedTo": "文件已保存到:",
-  "fileLocationTip": "您可以使用文件管理器找到此文件，或者尝试安装相应的应用来打开它。",
-  "downloadDirectory": "下载目录",
-  "openDirectory": "打开目录",
-  "clearRecords": "清空记录",
-  "clearAll": "清空所有",
-  "downloadRecordsCleared": "已清空下载记录",
-  "inProgress": "进行中",
-  "completed": "已完成",
-  "refresh": "刷新",
-  "pending": "等待中",
-  "downloading": "下载中",
-  "failed": "失败",
-  "cancelled": "已取消",
-  "cannotGetDownloadDirectory": "无法获取下载目录",
-  "startDownload": "开始下载: {filename}",
-  "@startDownload": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "downloadProgress": "下载进度: {progress}%",
-  "@downloadProgress": {
-    "placeholders": {
-      "progress": {
-        "type": "String"
-      }
-    }
-  },
-  "downloadComplete": "下载完成: {filename}",
-  "@downloadComplete": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "open": "打开",
-  "downloadCancelled": "下载已取消: {url}",
-  "@downloadCancelled": {
-    "placeholders": {
-      "url": {
-        "type": "String"
-      }
-    }
-  },
-  "downloadFailedWithError": "下载失败: {filename}",
-  "@downloadFailedWithError": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "userCancelledDownload": "用户取消下载",
-  "cannotGetBaseDownloadDirectory": "无法获取基础下载目录",
-  "createOpenListDownloadDirectory": "创建OpenList下载目录: {path}",
-  "@createOpenListDownloadDirectory": {
-    "placeholders": {
-      "path": {
-        "type": "String"
-      }
-    }
-  },
-  "createOpenListDirectoryFailed": "创建OpenList目录失败: {error}",
-  "@createOpenListDirectoryFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "openListDownloadDirectory": "OpenList下载目录: {path}",
-  "@openListDownloadDirectory": {
-    "placeholders": {
-      "path": {
-        "type": "String"
-      }
-    }
-  },
-  "getDownloadDirectoryFailed": "获取下载目录失败: {error}",
-  "@getDownloadDirectoryFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "parseFilenameFailed": "解析文件名失败: {error}",
-  "@parseFilenameFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "needInstallPermission": "需要安装权限",
-  "needInstallPermissionDesc": "为了安装 APK 文件，需要授予安装权限。请在设置中手动开启。",
-  "goToSettings": "去设置",
-  "needInstallPermissionToInstallApk": "需要安装权限才能安装 APK 文件",
-  "checkInstallPermissionFailed": "检查安装权限失败: {error}",
-  "@checkInstallPermissionFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "tryToOpenFile": "尝试打开文件: {path}",
-  "@tryToOpenFile": {
-    "placeholders": {
-      "path": {
-        "type": "String"
-      }
-    }
-  },
-  "openFileResult": "打开文件结果: {type} - {message}",
-  "@openFileResult": {
-    "placeholders": {
-      "type": {
-        "type": "String"
-      },
-      "message": {
-        "type": "String"
-      }
-    }
-  },
-  "cannotInstallApkFile": "无法安装 APK 文件，可能需要在设置中开启\"允许安装未知来源应用\"",
-  "noPermissionToInstallApk": "没有权限安装 APK 文件，请在设置中开启安装权限",
-  "openFileException": "打开文件异常: {error}",
-  "@openFileException": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "getDownloadFileListFailed": "获取下载文件列表失败: {error}",
-  "@getDownloadFileListFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "downloadDirectoryCleared": "已清理下载目录",
-  "clearDownloadDirectoryFailed": "清理下载目录失败: {error}",
-  "@clearDownloadDirectoryFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "fileDeletedLog": "已删除文件: {filename}",
-  "@fileDeletedLog": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteFileFailedLog": "删除文件失败: {error}",
-  "@deleteFileFailedLog": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "preparingDownload": "准备下载...",
-  "downloadCancelledStatus": "下载已取消",
-  "notificationManagerInitialized": "通知管理器初始化成功",
-  "notificationManagerInitFailed": "通知管理器初始化失败: {error}",
-  "@notificationManagerInitFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "notificationClicked": "通知被点击: {payload}",
-  "@notificationClicked": {
-    "placeholders": {
-      "payload": {
-        "type": "String"
-      }
-    }
-  },
-  "currentDownloadingFiles": "当前有 {count} 个文件在下载",
-  "@currentDownloadingFiles": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "downloadProgressDesc": "显示文件下载进度",
-  "viewDownloads": "查看下载",
-  "showDownloadProgressNotificationFailed": "显示下载进度通知失败: {error}",
-  "@showDownloadProgressNotificationFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "downloadCompleteNotificationTitle": "{filename} 下载完毕",
-  "@downloadCompleteNotificationTitle": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "clickToJumpToDownloadManager": "点击跳转到下载管理",
-  "downloadCompleteTitle": "下载完成",
-  "multipleFilesCompleted": "{count} 个文件已完成，点击跳转到下载管理",
-  "@multipleFilesCompleted": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "downloadCompleteChannel": "下载完成",
-  "downloadCompleteChannelDesc": "文件下载完成通知",
-  "openDownloadManager": "打开下载管理",
-  "showDownloadCompleteNotificationFailed": "显示下载完成通知失败: {error}",
-  "@showDownloadCompleteNotificationFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "showSingleFileCompleteNotificationFailed": "显示单个文件下载完成通知失败: {error}",
-  "@showSingleFileCompleteNotificationFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "cancelDownloadNotificationFailed": "取消下载通知失败: {error}",
-  "@cancelDownloadNotificationFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "cancelAllNotificationsFailed": "取消所有通知失败: {error}",
   "@cancelAllNotificationsFailed": {
     "placeholders": {
       "error": {
@@ -389,54 +7,125 @@
       }
     }
   },
-  "showInFileManager": "在文件管理器中显示",
-  "fileSize": "大小: {size}",
-  "@fileSize": {
-    "placeholders": {
-      "size": {
-        "type": "String"
-      }
-    }
-  },
-  "fileTime": "时间: {time}",
-  "@fileTime": {
-    "placeholders": {
-      "time": {
-        "type": "String"
-      }
-    }
-  },
-  "ok": "确定",
-  "openFileManager": "打开文件管理器",
-  "fileManagerOpened": "已打开文件管理器",
-  "openFileManagerFailed": "打开文件管理器失败: {error}",
-  "@openFileManagerFailed": {
+  "@cancelDownloadNotificationFailed": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
   },
-  "downloadDirectoryOpened": "已打开下载目录",
-  "openDownloadDirectoryFailed": "打开下载目录失败: {error}",
-  "@openDownloadDirectoryFailed": {
+  "@checkInstallPermissionFailed": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
   },
-  "downloadDirectoryPathUnknown": "下载目录路径未知",
-  "cannotGetDownloadDirectoryError": "无法获取下载目录",
-  "startDownloadFile": "开始下载: {filename}",
-  "@startDownloadFile": {
+  "@clearDownloadDirectoryFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@confirmCancelDownload": {
     "placeholders": {
       "filename": {
         "type": "String"
       }
     }
   },
-  "downloadCompleteFile": "下载完成: {filename}",
+  "@confirmDeleteFile": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "@confirmDeleteRecord": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "@connectionFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@createOpenListDirectoryFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@createOpenListDownloadDirectory": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@currentDownloadingFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteFileFailedLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteItemConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteItemsConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteSiteConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteStorageConfirm": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@downloadCancelled": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "@downloadComplete": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
   "@downloadCompleteFile": {
     "placeholders": {
       "filename": {
@@ -444,7 +133,13 @@
       }
     }
   },
-  "downloadFailedFile": "下载失败: {filename}",
+  "@downloadCompleteNotificationTitle": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
   "@downloadFailedFile": {
     "placeholders": {
       "filename": {
@@ -452,55 +147,27 @@
       }
     }
   },
-  "userCancelledDownloadError": "用户取消下载",
-  "cannotInstallApkNeedPermission": "无法安装 APK 文件，可能需要在设置中开启\"允许安装未知来源应用\"",
-  "noPermissionToInstallApkFile": "没有权限安装 APK 文件，请在设置中开启安装权限",
-  "preparingDownloadStatus": "准备下载...",
-  "downloadCancelledText": "下载已取消",
-  "language": "语言",
-  "languageSettings": "语言设置",
-  "languageSettingsDesc": "选择应用显示语言",
-  "followSystem": "跟随系统",
-  "simplifiedChinese": "简体中文",
-  "english": "English",
-  "troubleshooting": "疑难解答",
-  "troubleshootingDesc": "常见问题与解决方案",
-  "databaseNotSavedIssue": "数据库未保存问题",
-  "databaseNotSavedIssueDesc": "如不手动关闭OpenList，则数据库可能不会被保存到对应的db文件中，如遇到此问题，请手动关闭以解决此问题。（开关位于主程序菜单OpenList界面，以及通知栏的通知上）",
-  "autoStartIssue": "自启动相关说明",
-  "autoStartIssueDesc": "设置自启动时建议把app的电池优化一并关闭，当前在开启自启动后，系统重启时服务会自动在后台启动，但可能不会在通知栏弹出通知。请放心，服务已正常运行，您可以在通知栏快捷开关查看服务状态，或回到主界面查看服务开关确认服务是否已启动。",
-  "currentlyDownloading": "正在下载",
-  "downloadProgressChannel": "下载进度",
-  "confirmDownload": "确认下载",
-  "confirmDownloadMessage": "是否要下载这个文件？",
-  "downloadingImage": "正在下载图片...",
-  "laterInstall": "稍后安装",
-  "installNow": "立即安装",
-  "directDownloadMethod": "直接下载",
-  "directDownloadMethodDesc": "使用应用内下载器",
-  "browserDownloadMethod": "浏览器下载",
-  "browserDownloadMethodDesc": "使用系统浏览器",
-  "shareLink": "分享链接",
-  "shareLinkDesc": "分享下载链接",
-  "view": "查看",
-  "downloadFunctionTest": "下载功能测试",
-  "testDirectDownloadFunction": "测试直接下载功能",
-  "testDownloadJsonFile": "测试下载JSON文件",
-  "testDownloadPngImage": "测试下载PNG图片",
-  "testDownloadLargeFile": "测试下载大文件(1MB)",
-  "viewDownloadFiles": "查看下载文件",
-  "checkDownloadManagerForFiles": "请通过底部导航栏的\"下载管理\"查看下载文件",
-  "viewDownloadDirectory": "查看下载目录",
-  "getDownloadPathFailed": "获取失败",
-  "openDownloadTestPage": "是否要打开下载测试页面？",
-  "description": "说明：",
-  "downloadInstructions": "• 文件将下载到系统下载目录\\n• 下载过程会显示进度通知\\n• 下载完成后可以选择打开文件\\n• 如果文件名重复会自动添加序号\\n• 请通过底部导航栏的\\\"下载管理\\\"查看下载文件",
-  "selectDownloadMethod": "选择下载方式",
-  "batchDownloadComplete": "批量下载完成",
-  "imageDownloadSuccess": "图片下载成功",
-  "checkImageInDownloadFolder": "请在下载目录查看图片",
-  "findApkInDownloadFolder": "请在下载目录找到APK文件进行安装",
-  "downloadingFileProgress": "正在下载第 {current}/{total} 个文件",
+  "@downloadFailedWithError": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "@downloadManagerWithCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@downloadProgress": {
+    "placeholders": {
+      "progress": {
+        "type": "String"
+      }
+    }
+  },
   "@downloadingFileProgress": {
     "placeholders": {
       "current": {
@@ -511,7 +178,13 @@
       }
     }
   },
-  "fileDownloadFailed": "第 {index} 个文件下载失败",
+  "@fileDeletedLog": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
   "@fileDownloadFailed": {
     "placeholders": {
       "index": {
@@ -519,18 +192,51 @@
       }
     }
   },
-  "apkDownloadCompleteMessage": "APK文件已下载完成，是否要安装？",
-  "openlist": "OpenList",
-  "openlistMobile": "OpenList Mobile",
-  "openSourceLicenses": "开源许可证",
-  "viewThirdPartyLicenses": "查看第三方许可证",
-  "editOpenListConfig": "修改OpenList配置文件",
-  "save": "保存",
-  "saved": "已保存",
-  "edit": "编辑",
-  "preview": "预览",
-  "fileNotFoundWillCreateOnSave": "文件不存在,保存时将创建",
-  "loadFailed": "加载失败:{error}",
+  "@fileSize": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "@fileTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@getDownloadDirectoryFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@getDownloadFileListFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@invalidJsonFormat": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      },
+      "line": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@loadFailed": {
     "placeholders": {
       "error": {
@@ -538,35 +244,107 @@
       }
     }
   },
-  "saveFailed": "保存失败:{error}",
-  "@saveFailed": {
+  "@loginFailed": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
   },
-  "invalidJsonFormat": "JSON格式错误,第{line}行:{error}",
-  "@invalidJsonFormat": {
+  "@multipleFilesCompleted": {
     "placeholders": {
-      "line": {
+      "count": {
         "type": "int"
-      },
+      }
+    }
+  },
+  "@notificationClicked": {
+    "placeholders": {
+      "payload": {
+        "type": "String"
+      }
+    }
+  },
+  "@notificationManagerInitFailed": {
+    "placeholders": {
       "error": {
         "type": "String"
       }
     }
   },
-  "filePermissionDenied": "文件权限被拒绝,请检查应用权限",
-  "configSavedRestartRequired": "配置已保存,请重启OpenList服务以生效",
-  "confirmSaveConfigTitle": "确认保存",
-  "confirmSaveConfigMessage": "修改配置可能导致服务不可用,确定保存吗?",
-  "saveAndRestart": "保存并重启",
-  "saveOnly": "仅保存",
-  "restoreBackup": "恢复备份",
-  "backupRestored": "备份已恢复",
-  "noBackupFound": "未找到备份文件",
-  "restoreBackupFailed": "恢复备份失败:{error}",
+  "@openDownloadDirectoryFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@openFileException": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@openFileFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@openFileManagerFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@openFileResult": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "@openListDownloadDirectory": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@operationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@parseFilenameFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@playbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@renamePrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restoreBackupFailed": {
     "placeholders": {
       "error": {
@@ -574,8 +352,455 @@
       }
     }
   },
+  "@saveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchResultCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@selectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@showDownloadCompleteNotificationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@showDownloadProgressNotificationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@showSingleFileCompleteNotificationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@startDownload": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "@startDownloadFile": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "@tryToOpenFile": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "about": "关于",
+  "add": "添加",
+  "addSite": "添加站点",
+  "additionJson": "驱动配置（JSON）",
+  "additionJsonInvalid": "配置 JSON 格式错误",
+  "additionalItems": "{count} 项配置",
+  "apkDownloadCompleteMessage": "APK文件已下载完成，是否要安装？",
+  "appName": "OpenList",
+  "audioTrack": "音频",
+  "autoCheckForUpdates": "自动检查更新",
+  "autoCheckForUpdatesDesc": "启动时自动检查更新",
+  "autoStartIssue": "自启动相关说明",
+  "autoStartIssueDesc": "设置自启动时建议把app的电池优化一并关闭，当前在开启自启动后，系统重启时服务会自动在后台启动，但可能不会在通知栏弹出通知。请放心，服务已正常运行，您可以在通知栏快捷开关查看服务状态，或回到主界面查看服务开关确认服务是否已启动。",
+  "autoStartWebPage": "将网页设置为打开首页",
+  "autoStartWebPageDesc": "打开主界面时的首页",
+  "backAgainToExit": "再按一次返回键退出",
+  "backupRestored": "备份已恢复",
+  "basicInfo": "基础信息",
+  "batchCopy": "批量复制",
+  "batchDelete": "批量删除",
+  "batchDownload": "批量下载",
+  "batchDownloadComplete": "批量下载完成",
+  "batchMove": "批量移动",
+  "bootAutoStartService": "开机自启动服务",
+  "bootAutoStartServiceDesc": "在开机后自动启动OpenList服务。（请确保授予自启动权限）",
+  "browserDownload": "浏览器下载",
+  "browserDownloadMethod": "浏览器下载",
+  "browserDownloadMethodDesc": "使用系统浏览器",
+  "cancel": "取消",
+  "cancelAllNotificationsFailed": "取消所有通知失败: {error}",
+  "cancelDownload": "取消下载",
+  "cancelDownloadNotificationFailed": "取消下载通知失败: {error}",
+  "cancelled": "已取消",
+  "cannotGetBaseDownloadDirectory": "无法获取基础下载目录",
+  "cannotGetDownloadDirectory": "无法获取下载目录",
+  "cannotGetDownloadDirectoryError": "无法获取下载目录",
+  "cannotInstallApkFile": "无法安装 APK 文件，可能需要在设置中开启\"允许安装未知来源应用\"",
+  "cannotInstallApkNeedPermission": "无法安装 APK 文件，可能需要在设置中开启\"允许安装未知来源应用\"",
+  "cannotPreview": "该文件类型暂不支持预览",
+  "checkDownloadManagerForFiles": "请通过底部导航栏的\"下载管理\"查看下载文件",
+  "checkForUpdates": "检查更新",
+  "checkImageInDownloadFolder": "请在下载目录查看图片",
+  "checkInstallPermissionFailed": "检查安装权限失败: {error}",
+  "clear": "清空",
+  "clearAll": "清空所有",
+  "clearDownloadDirectoryFailed": "清理下载目录失败: {error}",
+  "clearFailed": "清空失败",
+  "clearRecords": "清空记录",
+  "clearSucceeded": "清除已完成",
+  "cleared": "已清空下载目录",
+  "clickToJumpToDownloadManager": "点击跳转到下载管理",
+  "close": "关闭",
+  "completed": "已完成",
+  "completedTime": "完成时间",
+  "configSavedRestartRequired": "配置已保存,请重启OpenList服务以生效",
+  "confirm": "确认",
+  "confirmCancelDownload": "确定要取消下载 \"{filename}\" 吗？",
+  "confirmClear": "确认清空",
+  "confirmClearAllFiles": "确定要清空所有下载文件吗？此操作不可撤销。",
+  "confirmDelete": "确认删除",
+  "confirmDeleteFile": "确定要删除文件 \"{filename}\" 吗？此操作不可撤销。",
+  "confirmDeleteRecord": "确定要删除 \"{filename}\" 的下载记录吗？",
+  "confirmDownload": "确认下载",
+  "confirmDownloadMessage": "是否要下载这个文件？",
+  "confirmSaveConfigMessage": "修改配置可能导致服务不可用,确定保存吗?",
+  "confirmSaveConfigTitle": "确认保存",
+  "connectionFailed": "连接失败: {error}",
+  "connectionOk": "连接成功",
+  "continueDownload": "继续下载",
+  "copiedToClipboard": "已复制到剪贴板",
+  "copy": "复制",
+  "copySuccess": "复制成功",
+  "copyTo": "复制到",
+  "createOpenListDirectoryFailed": "创建OpenList目录失败: {error}",
+  "createOpenListDownloadDirectory": "创建OpenList下载目录: {path}",
+  "createSuccess": "创建成功",
+  "createdTime": "创建时间",
+  "currentDownloadingFiles": "当前有 {count} 个文件在下载",
+  "currentIsLatestVersion": "已经是最新版本",
+  "currentlyDownloading": "正在下载",
+  "dataDirectory": "data 文件夹路径",
+  "databaseNotSavedIssue": "数据库未保存问题",
+  "databaseNotSavedIssueDesc": "如不手动关闭OpenList，则数据库可能不会被保存到对应的db文件中，如遇到此问题，请手动关闭以解决此问题。（开关位于主程序菜单OpenList界面，以及通知栏的通知上）",
+  "defaultSite": "默认站点",
+  "delete": "删除",
+  "deleteFailed": "删除失败",
+  "deleteFile": "删除文件",
+  "deleteFileFailedLog": "删除文件失败: {error}",
+  "deleteItemConfirm": "确定删除 \"{name}\" 吗？",
+  "deleteItemsConfirm": "确定删除选中的 {count} 项吗？",
+  "deleteRecord": "删除记录",
+  "deleteSiteConfirm": "确定删除站点 \"{name}\" 吗？",
+  "deleteStorage": "删除存储",
+  "deleteStorageConfirm": "确认删除存储 {path}？",
+  "deleteSuccess": "删除成功",
+  "description": "说明：",
+  "desktopShortcut": "桌面快捷方式",
+  "directDownload": "直接下载",
+  "directDownloadApk": "直接下载APK",
+  "directDownloadMethod": "直接下载",
+  "directDownloadMethodDesc": "使用应用内下载器",
+  "doneTasks": "已完成",
+  "download": "下载",
+  "downloadApk": "下载APK",
+  "downloadCancelled": "下载已取消: {url}",
+  "downloadCancelledStatus": "下载已取消",
+  "downloadCancelledText": "下载已取消",
+  "downloadComplete": "下载完成: {filename}",
+  "downloadCompleteChannel": "下载完成",
+  "downloadCompleteChannelDesc": "文件下载完成通知",
+  "downloadCompleteFile": "下载完成: {filename}",
+  "downloadCompleteNotificationTitle": "{filename} 下载完毕",
+  "downloadCompleteTitle": "下载完成",
+  "downloadDirectory": "下载目录",
+  "downloadDirectoryCleared": "已清理下载目录",
+  "downloadDirectoryOpened": "已打开下载目录",
+  "downloadDirectoryPathUnknown": "下载目录路径未知",
+  "downloadFailed": "下载失败",
+  "downloadFailedFile": "下载失败: {filename}",
+  "downloadFailedWithError": "下载失败: {filename}",
+  "downloadFunctionTest": "下载功能测试",
+  "downloadInstructions": "• 文件将下载到系统下载目录\\n• 下载过程会显示进度通知\\n• 下载完成后可以选择打开文件\\n• 如果文件名重复会自动添加序号\\n• 请通过底部导航栏的\\\"下载管理\\\"查看下载文件",
+  "downloadManager": "下载管理",
+  "downloadManagerWithCount": "下载管理({count})",
+  "downloadProgress": "下载进度: {progress}%",
+  "downloadProgressChannel": "下载进度",
+  "downloadProgressDesc": "显示文件下载进度",
+  "downloadRecordsCleared": "已清空下载记录",
+  "downloadStarted": "已开始下载",
+  "downloadThisFile": "下载此文件吗？",
+  "downloadToOpen": "下载后用其他应用打开",
+  "downloading": "下载中",
+  "downloadingFileProgress": "正在下载第 {current}/{total} 个文件",
+  "downloadingImage": "正在下载图片...",
+  "driver": "驱动",
+  "driverSpecific": "驱动专属配置",
+  "edit": "编辑",
+  "editOpenListConfig": "修改OpenList配置文件",
+  "editSite": "编辑站点",
+  "editStorage": "编辑存储",
+  "embeddedSite": "内嵌站点",
+  "embeddedSiteDesc": "App 内置的 OpenList 服务器",
+  "embeddedUserManaged": "由应用自动管理（内置账号免密登录）",
+  "emptyFolder": "此文件夹为空",
+  "emptyList": "暂无内容",
+  "enableWebBrowser": "启用内置网页浏览器",
+  "enableWebBrowserDesc": "允许网页页面运行内置浏览器",
+  "english": "English",
+  "enterOtp": "请输入两步验证码",
+  "failed": "失败",
+  "fileDeleted": "文件已删除",
+  "fileDeletedLog": "已删除文件: {filename}",
+  "fileDetails": "文件详情",
+  "fileDownloadFailed": "第 {index} 个文件下载失败",
+  "fileInfo": "文件信息",
+  "fileLocation": "文件位置",
+  "fileLocationTip": "您可以使用文件管理器找到此文件，或者尝试安装相应的应用来打开它。",
+  "fileManagerOpened": "已打开文件管理器",
+  "fileName": "文件名",
+  "fileNotFound": "文件不存在或已被删除",
+  "fileNotFoundWillCreateOnSave": "文件不存在,保存时将创建",
+  "filePath": "路径",
+  "filePermissionDenied": "文件权限被拒绝,请检查应用权限",
+  "fileSavedTo": "文件已保存到:",
+  "fileSize": "大小: {size}",
+  "fileTime": "时间: {time}",
+  "filesTab": "文件",
+  "findApkInDownloadFolder": "请在下载目录找到APK文件进行安装",
+  "folderName": "文件夹名称",
+  "folderPassword": "文件夹密码",
+  "followSystem": "跟随系统",
+  "general": "通用",
+  "generalSettings": "常规设置",
+  "getDownloadDirectoryFailed": "获取下载目录失败: {error}",
+  "getDownloadFileListFailed": "获取下载文件列表失败: {error}",
+  "getDownloadPathFailed": "获取失败",
+  "goTo": "前往",
+  "goToSettings": "去设置",
+  "grantManagerStoragePermission": "申请【所有文件访问权限】",
+  "grantNotificationPermission": "申请【通知权限】",
+  "grantNotificationPermissionDesc": "用于前台服务保活",
+  "grantStoragePermission": "申请【读写外置存储权限】",
+  "grantStoragePermissionDesc": "挂载本地存储时必须授予，否则无权限读写文件",
+  "imageDownloadSuccess": "图片下载成功",
+  "importConfig": "导入配置",
+  "importSuccess": "配置已导入",
+  "importantSettings": "重要",
+  "inProgress": "进行中",
+  "initServerHint": "请设置管理员账号完成初始化",
+  "initSiteTitle": "站点标题",
+  "initialize": "初始化",
+  "initializingNotificationManager": "初始化通知管理器",
+  "installNow": "立即安装",
+  "invalidJsonFormat": "JSON格式错误,第{line}行:{error}",
+  "itemsCount": "共 {count} 项",
+  "jumpToOtherApp": "跳转到其他APP ？",
+  "language": "语言",
+  "languageSettings": "语言设置",
+  "languageSettingsDesc": "选择应用显示语言",
+  "laterInstall": "稍后安装",
+  "loadDownloadFilesFailed": "加载下载文件失败",
+  "loadFailed": "加载失败:{error}",
+  "loading": "加载中...",
+  "lockScreen": "锁定",
+  "login": "登录",
+  "loginFailed": "登录失败: {error}",
+  "manage": "管理",
+  "modifiedTime": "修改时间",
+  "modifyAdminPassword": "修改Admin密码",
+  "moreOptions": "更多选项",
+  "mountPath": "挂载路径",
+  "mountPathInvalid": "挂载路径必须以 / 开头",
+  "mountStorage": "挂载存储",
+  "mountSuccess": "挂载成功",
+  "move": "移动",
+  "moveSuccess": "移动成功",
+  "moveTo": "移动到",
+  "multipleFilesCompleted": "{count} 个文件已完成，点击跳转到下载管理",
+  "needInstallPermission": "需要安装权限",
+  "needInstallPermissionDesc": "为了安装 APK 文件，需要授予安装权限。请在设置中手动开启。",
+  "needInstallPermissionToInstallApk": "需要安装权限才能安装 APK 文件",
+  "newFolder": "新建文件夹",
+  "newVersionFound": "发现新版本",
+  "noActiveDownloads": "暂无进行中的下载",
+  "noAppToOpenFile": "没有找到可以打开此文件的应用",
+  "noBackupFound": "未找到备份文件",
+  "noCompletedDownloads": "暂无已完成的下载",
+  "noMoreData": "没有更多了",
+  "noPermissionToInstallApk": "没有权限安装 APK 文件，请在设置中开启安装权限",
+  "noPermissionToInstallApkFile": "没有权限安装 APK 文件，请在设置中开启安装权限",
+  "noPermissionToOpenFile": "没有权限打开此文件",
+  "notificationClicked": "通知被点击: {payload}",
+  "notificationManagerInitFailed": "通知管理器初始化失败: {error}",
+  "notificationManagerInitialized": "通知管理器初始化成功",
+  "ok": "确定",
+  "open": "打开",
+  "openDirectory": "打开目录",
+  "openDownloadDirectoryFailed": "打开下载目录失败: {error}",
+  "openDownloadManager": "打开下载管理",
+  "openDownloadTestPage": "是否要打开下载测试页面？",
+  "openFile": "打开文件",
+  "openFileException": "打开文件异常: {error}",
+  "openFileFailed": "打开文件失败: {error}",
+  "openFileManager": "打开文件管理器",
+  "openFileManagerFailed": "打开文件管理器失败: {error}",
+  "openFileResult": "打开文件结果: {type} - {message}",
+  "openListDownloadDirectory": "OpenList下载目录: {path}",
+  "openSourceLicenses": "开源许可证",
+  "openWebAdmin": "打开网页管理后台",
+  "openWebAdminDesc": "使用系统默认浏览器打开当前站点",
+  "openlist": "OpenList",
+  "openlistMobile": "OpenList Mobile",
+  "operationFailed": "操作失败: {error}",
+  "operationSuccess": "操作成功",
+  "otpCodeHint": "6位动态验证码",
+  "otpRequired": "需要两步验证码",
+  "parseFilenameFailed": "解析文件名失败: {error}",
+  "pending": "等待中",
+  "playbackError": "播放失败: {error}",
+  "playerSpeed": "倍速",
+  "preparingDownload": "准备下载...",
+  "preparingDownloadStatus": "准备下载...",
+  "preview": "预览",
+  "protectedFolder": "此文件夹需要密码",
+  "qrExport": "导出配置二维码",
+  "qrExportHint": "在其他设备上扫描此二维码即可导入配置",
+  "qrImport": "扫码导入配置",
+  "qrInvalid": "二维码内容不是有效的存储配置",
+  "qrScanHint": "对准二维码即可自动识别",
+  "qrScanTitle": "扫描二维码",
+  "refresh": "刷新",
+  "releasePage": "发布页面",
+  "remark": "备注",
+  "rename": "重命名",
+  "renamePrompt": "重命名 \"{name}\"",
+  "renameSuccess": "重命名成功",
+  "resetEmbeddedPwd": "重置内嵌管理员密码",
+  "resetEmbeddedPwdDesc": "忘记密码时可重置后重新登录",
+  "resetPwdDone": "密码已重置，请用新密码重新登录",
   "restartingService": "正在重启OpenList服务...",
-  "serviceRestartSuccess": "服务重启成功",
+  "restoreBackup": "恢复备份",
+  "restoreBackupFailed": "恢复备份失败:{error}",
+  "retry": "重试",
+  "rootDir": "根目录",
+  "rootFolderPath": "根目录路径",
+  "running": "运行中",
+  "save": "保存",
+  "saveAndRestart": "保存并重启",
+  "saveFailed": "保存失败:{error}",
+  "saveOnly": "仅保存",
+  "saveSuccess": "保存成功",
+  "saved": "已保存",
+  "search": "搜索",
+  "searchDriver": "搜索驱动",
+  "searchKeywordsHint": "输入关键词搜索",
+  "searchNotEnabled": "服务器未启用搜索索引，请在管理后台开启",
+  "searchResultCount": "找到 {count} 个结果",
+  "searching": "搜索中...",
+  "selectAll": "全选",
+  "selectAppToOpen": "选择应用打开",
+  "selectDownloadMethod": "选择下载方式",
+  "selectedCount": "已选 {count} 项",
+  "serverNotInitialized": "服务器尚未初始化",
   "serviceRestartFailed": "服务重启失败,请手动重启",
-  "serviceRestartOnlyAndroid": "服务重启仅支持Android系统"
+  "serviceRestartOnlyAndroid": "服务重启仅支持Android系统",
+  "serviceRestartSuccess": "服务重启成功",
+  "sessionExpired": "登录已过期，正在重新登录...",
+  "setAdminPassword": "设置Admin密码",
+  "setAsDefault": "设为默认",
+  "setDefaultDirectory": "是否设为初始目录？",
+  "settings": "设置",
+  "shareFeatureNotImplemented": "分享功能待实现",
+  "shareFile": "分享文件",
+  "shareLink": "分享链接",
+  "shareLinkDesc": "分享下载链接",
+  "showDownloadCompleteNotificationFailed": "显示下载完成通知失败: {error}",
+  "showDownloadProgressNotificationFailed": "显示下载进度通知失败: {error}",
+  "showHiddenFiles": "显示隐藏文件",
+  "showInFileManager": "在文件管理器中显示",
+  "showSingleFileCompleteNotificationFailed": "显示单个文件下载完成通知失败: {error}",
+  "silentJumpApp": "静默跳转APP",
+  "silentJumpAppDesc": "跳转APP时，不弹出提示框",
+  "simplifiedChinese": "简体中文",
+  "siteManage": "站点管理",
+  "siteName": "站点名称",
+  "siteOtpCode": "两步验证码（可选）",
+  "sitePassword": "密码",
+  "siteUrlHint": "例如 http://192.168.1.10:5244",
+  "siteUsername": "用户名",
+  "size": "大小",
+  "sort": "排序",
+  "sortByName": "按文件名",
+  "sortByTime": "按时间",
+  "sortByType": "按类型",
+  "startDownload": "开始下载: {filename}",
+  "startDownloadFile": "开始下载: {filename}",
+  "startTime": "开始时间",
+  "startWebBrowser": "启动网页浏览器",
+  "stopWebBrowser": "停止",
+  "stopped": "已停止",
+  "storageEmpty": "还没有挂载任何存储",
+  "storageManage": "存储管理",
+  "storageManageDesc": "挂载、导入、编辑、启停服务器存储",
+  "targetFolder": "目标文件夹",
+  "taskEmpty": "暂无任务",
+  "taskManage": "服务器任务",
+  "taskManageDesc": "离线下载 / 上传 / 复制 / 移动 / 解压任务管理",
+  "testConnection": "测试连接",
+  "testDirectDownloadFunction": "测试直接下载功能",
+  "testDownloadJsonFile": "测试下载JSON文件",
+  "testDownloadLargeFile": "测试下载大文件(1MB)",
+  "testDownloadPngImage": "测试下载PNG图片",
+  "testing": "正在测试连接...",
+  "textTooLarge": "文件过大，无法预览（超过 1MB）",
+  "troubleshooting": "疑难解答",
+  "troubleshootingDesc": "常见问题与解决方案",
+  "tryToOpenFile": "尝试打开文件: {path}",
+  "uiSettings": "界面",
+  "undoneTasks": "进行中",
+  "unknownDuration": "未知时长",
+  "unlockScreen": "解锁屏幕",
+  "upload": "上传",
+  "uploadFailed": "上传失败: {error}",
+  "uploadFile": "上传文件",
+  "uploadSuccess": "上传成功",
+  "uploading": "正在上传...",
+  "userCancelledDownload": "用户取消下载",
+  "userCancelledDownloadError": "用户取消下载",
+  "view": "查看",
+  "viewDownloadDirectory": "查看下载目录",
+  "viewDownloadFiles": "查看下载文件",
+  "viewDownloads": "查看下载",
+  "viewLocation": "查看位置",
+  "viewThirdPartyLicenses": "查看第三方许可证",
+  "wakeLock": "唤醒锁",
+  "wakeLockDesc": "开启防止锁屏后CPU休眠，保持进程在后台运行。（部分系统可能导致杀后台）",
+  "webBrowserDownloadInProgress": "下载进行中，无法停止浏览器",
+  "webBrowserStatus": "内置网页浏览器",
+  "webBrowserStopped": "内置网页浏览器已停止",
+  "webPage": "网页",
+  "wrongPassword": "密码错误"
 }

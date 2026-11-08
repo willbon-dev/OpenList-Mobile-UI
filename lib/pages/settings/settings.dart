@@ -2,7 +2,11 @@ import 'dart:io';
 import 'package:openlist_mobile/contant/native_bridge.dart';
 import 'package:openlist_mobile/generated_api.dart';
 import 'package:openlist_mobile/pages/settings/preference_widgets.dart';
+import 'package:openlist_mobile/pages/settings/storage_manage_page.dart';
+import 'package:openlist_mobile/pages/settings/task_manage_page.dart';
 import 'package:openlist_mobile/pages/settings/troubleshooting_page.dart';
+import 'package:openlist_mobile/services/site_manager.dart';
+import 'package:openlist_mobile/utils/intent_utils.dart';
 import 'package:openlist_mobile/utils/language_controller.dart';
 import 'package:openlist_mobile/utils/web_browser_manager.dart';
 import 'package:file_picker/file_picker.dart';
@@ -127,14 +131,43 @@ class _SettingsScreenState extends State<SettingsScreen> {
               controller.startAtBoot = value;
             },
           ),
-          // AutoStartWebPage
-          SwitchPreference(
-            title: S.of(context).autoStartWebPage,
-            subtitle: S.of(context).autoStartWebPageDesc,
-            icon: const Icon(Icons.open_in_browser),
-            value: controller._autoStartWebPage.value,
-            onChanged: (value) {
-              controller.autoStartWebPage = value;
+          BasicPreference(
+            title: S.of(context).openWebAdmin,
+            subtitle: _webAdminUrl(),
+            leading: const Icon(Icons.open_in_browser),
+            onTap: _openWebAdmin,
+          ),
+
+          DividerPreference(title: S.of(context).manage),
+
+          BasicPreference(
+            title: S.of(context).storageManage,
+            subtitle: S.of(context).storageManageDesc,
+            leading: const Icon(Icons.storage),
+            onTap: () {
+              final site = SiteManager.to.current.value;
+              if (site == null) return;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => StorageManagePage(site: site),
+                ),
+              );
+            },
+          ),
+          BasicPreference(
+            title: S.of(context).taskManage,
+            subtitle: S.of(context).taskManageDesc,
+            leading: const Icon(Icons.task_alt),
+            onTap: () {
+              final site = SiteManager.to.current.value;
+              if (site == null) return;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => TaskManagePage(site: site),
+                ),
+              );
             },
           ),
           BasicPreference(
@@ -214,7 +247,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String _getLanguageDisplayName() {
     final languageController = Get.find<LanguageController>();
     final currentOption = languageController.currentLanguageOption;
-    
+
     switch (currentOption.name) {
       case 'followSystem':
         return S.of(context).followSystem;
@@ -225,6 +258,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
       default:
         return currentOption.name;
     }
+  }
+
+  /// 当前站点的网页管理后台地址（内嵌站点为本机端口）
+  String _webAdminUrl() {
+    final url =
+        SiteManager.to.current.value?.url ?? 'http://localhost:5244';
+    return url;
+  }
+
+  /// 用系统默认浏览器打开当前站点的网页管理后台
+  void _openWebAdmin() {
+    final url = _webAdminUrl();
+    IntentUtils.getUrlIntent(url).launch();
   }
 
   void _showLanguageSelectionDialog(BuildContext context) {
@@ -294,15 +340,6 @@ class _SettingsController extends GetxController {
 
   get startAtBoot => _autoStart.value;
 
-  final _autoStartWebPage = false.obs;
-
-  set autoStartWebPage(value) => {
-        _autoStartWebPage.value = value,
-        NativeBridge.appConfig.setAutoOpenWebPageEnabled(value)
-      };
-
-  get autoStartWebPage => _autoStartWebPage.value;
-
   final _silentJumpApp = false.obs;
 
   get silentJumpApp => _silentJumpApp.value;
@@ -324,7 +361,6 @@ class _SettingsController extends GetxController {
     cfg.isAutoCheckUpdateEnabled().then((value) => autoUpdate = value);
     cfg.isWakeLockEnabled().then((value) => wakeLock = value);
     cfg.isStartAtBootEnabled().then((value) => startAtBoot = value);
-    cfg.isAutoOpenWebPageEnabled().then((value) => autoStartWebPage = value);
     cfg.isSilentJumpAppEnabled().then((value) => silentJumpApp = value);
 
     _dataDir.value = await cfg.getDataDir();

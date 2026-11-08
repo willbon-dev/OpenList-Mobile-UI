@@ -83,6 +83,14 @@ object OpenList : Event, LogCallback {
         Openlistlib.setAdminPassword(pwd)
     }
 
+    fun ensureAppUser(username: String, password: String): String {
+        if (!isRunning()) init()
+
+        Log.d(TAG, "ensureAppUser: $username")
+        Openlistlib.setConfigData(dataDir)
+        return Openlistlib.ensureAppUser(username, password)
+    }
+
 
     fun shutdown() {
         Log.d(TAG, "shutdown")

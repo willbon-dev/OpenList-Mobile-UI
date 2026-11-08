@@ -41,6 +41,10 @@ class AndroidBridge(private val context: Context) : GeneratedApi.Android {
         OpenList.setAdminPassword(pwd)
     }
 
+    override fun ensureAppUser(username: String, password: String): String {
+        return OpenList.ensureAppUser(username, password)
+    }
+
     override fun getOpenListHttpPort(): Long {
         return OpenList.getHttpPort().toLong()
     }

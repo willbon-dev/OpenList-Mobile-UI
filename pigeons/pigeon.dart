@@ -52,6 +52,9 @@ abstract class Android {
 
   void setAdminPwd(String pwd);
 
+  /// 创建或重置原生 UI 专用内置账号（幂等），返回生效的用户名
+  String ensureAppUser(String username, String password);
+
   int getOpenListHttpPort();
 
   bool isRunning();

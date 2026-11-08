@@ -1,387 +1,5 @@
 {
   "@@locale": "en",
-  "appName": "OpenList",
-  "desktopShortcut": "Desktop shortcut",
-  "setAdminPassword": "Set Admin password",
-  "moreOptions": "More options",
-  "checkForUpdates": "Check for updates",
-  "currentIsLatestVersion": "Current is latest version",
-  "confirm": "OK",
-  "cancel": "Cancel",
-  "releasePage": "Release Page",
-  "downloadApk": "Download APK",
-  "about": "About",
-  "general": "General",
-  "autoCheckForUpdates": "Auto check for updates",
-  "autoCheckForUpdatesDesc": "Check for updates when app starts",
-  "wakeLock": "Wake lock",
-  "wakeLockDesc": "Prevent CPU from sleeping when screen is off. (May cause app killed in background on some devices)",
-  "bootAutoStartService": "Boot auto-start service",
-  "bootAutoStartServiceDesc": "Automatically start OpenList service after boot. (Please make sure to grant auto-start permission)",
-  "webPage": "Web Page",
-  "settings": "Settings",
-  "jumpToOtherApp": "Jump to other app？",
-  "selectAppToOpen": "Select app to open",
-  "goTo": "GO",
-  "downloadThisFile": "Download this file？",
-  "download": "download",
-  "copiedToClipboard": "Copied to clipboard",
-  "importantSettings": "Important settings",
-  "uiSettings": "UI",
-  "grantManagerStoragePermission": "Grant [Manage external storage] permission",
-  "grantStoragePermissionDesc": "Mounting local storage is a must, otherwise no permission to read and write files",
-  "grantStoragePermission": "Grant [external storage] permission",
-  "grantNotificationPermission": "Grant [Notification] permission",
-  "grantNotificationPermissionDesc": "Used for foreground service keep alive",
-  "autoStartWebPage": "Set web page as startup page",
-  "autoStartWebPageDesc": "Default page when opening main interface",
-  "webBrowserStatus": "Embedded web browser",
-  "running": "Running",
-  "stopped": "Stopped",
-  "stopWebBrowser": "Stop",
-  "enableWebBrowser": "Enable embedded web browser",
-  "enableWebBrowserDesc": "Allow the Web page to run the embedded browser",
-  "webBrowserStopped": "The embedded web browser is stopped",
-  "startWebBrowser": "Start web browser",
-  "webBrowserDownloadInProgress": "The browser cannot stop while a download is in progress",
-  "dataDirectory": "data Directory",
-  "setDefaultDirectory": "Set as default directory?",
-  "silentJumpApp": "Silent jump app",
-  "silentJumpAppDesc": "Jump to other app without prompt",
-  "newVersionFound": "New Version Found",
-  "directDownloadApk": "Direct Download APK",
-  "initializingNotificationManager": "Initializing notification manager",
-  "downloadManager": "Download",
-  "downloadManagerWithCount": "Download ({count})",
-  "@downloadManagerWithCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "modifyAdminPassword": "Modify Admin Password",
-  "directDownload": "Direct Download",
-  "browserDownload": "Browser Download",
-  "loadDownloadFilesFailed": "Failed to load download files",
-  "noActiveDownloads": "No active downloads",
-  "downloadFailed": "Download failed",
-  "startTime": "Start time",
-  "noCompletedDownloads": "No completed downloads",
-  "completedTime": "Completed time",
-  "size": "Size",
-  "openFile": "Open file",
-  "deleteRecord": "Delete record",
-  "deleteFile": "Delete file",
-  "confirmClear": "Confirm Clear",
-  "confirmClearAllFiles": "Are you sure you want to clear all download files? This action cannot be undone.",
-  "cleared": "Download directory cleared",
-  "clearFailed": "Clear failed",
-  "cancelDownload": "Cancel Download",
-  "confirmCancelDownload": "Are you sure you want to cancel downloading \"{filename}\"?",
-  "@confirmCancelDownload": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "continueDownload": "Continue Download",
-  "confirmDeleteRecord": "Are you sure you want to delete the download record of \"{filename}\"?",
-  "@confirmDeleteRecord": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "delete": "Delete",
-  "shareFile": "Share file",
-  "shareFeatureNotImplemented": "Share feature not implemented yet",
-  "fileInfo": "File info",
-  "fileName": "File name",
-  "modifiedTime": "Modified time",
-  "filePath": "Path",
-  "confirmDelete": "Confirm Delete",
-  "confirmDeleteFile": "Are you sure you want to delete file \"{filename}\"? This action cannot be undone.",
-  "@confirmDeleteFile": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "fileDeleted": "File deleted",
-  "deleteFailed": "Delete failed",
-  "clear": "Clear",
-  "noAppToOpenFile": "No app found to open this file",
-  "viewLocation": "View Location",
-  "fileNotFound": "File not found or has been deleted",
-  "noPermissionToOpenFile": "No permission to open this file",
-  "openFileFailed": "Failed to open file: {error}",
-  "@openFileFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "fileLocation": "File Location",
-  "fileSavedTo": "File saved to:",
-  "fileLocationTip": "You can use a file manager to find this file, or try installing the appropriate app to open it.",
-  "downloadDirectory": "Download Directory",
-  "openDirectory": "Open Directory",
-  "clearRecords": "Clear Records",
-  "clearAll": "Clear All",
-  "downloadRecordsCleared": "Download records cleared",
-  "inProgress": "In Progress",
-  "completed": "Completed",
-  "refresh": "Refresh",
-  "pending": "Pending",
-  "downloading": "Downloading",
-  "failed": "Failed",
-  "cancelled": "Cancelled",
-  "cannotGetDownloadDirectory": "Cannot get download directory",
-  "startDownload": "Start download: {filename}",
-  "@startDownload": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "downloadProgress": "Download progress: {progress}%",
-  "@downloadProgress": {
-    "placeholders": {
-      "progress": {
-        "type": "String"
-      }
-    }
-  },
-  "downloadComplete": "Download complete: {filename}",
-  "@downloadComplete": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "open": "Open",
-  "downloadCancelled": "Download cancelled: {url}",
-  "@downloadCancelled": {
-    "placeholders": {
-      "url": {
-        "type": "String"
-      }
-    }
-  },
-  "downloadFailedWithError": "Download failed: {filename}",
-  "@downloadFailedWithError": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "userCancelledDownload": "User cancelled download",
-  "cannotGetBaseDownloadDirectory": "Cannot get base download directory",
-  "createOpenListDownloadDirectory": "Create OpenList download directory: {path}",
-  "@createOpenListDownloadDirectory": {
-    "placeholders": {
-      "path": {
-        "type": "String"
-      }
-    }
-  },
-  "createOpenListDirectoryFailed": "Failed to create OpenList directory: {error}",
-  "@createOpenListDirectoryFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "openListDownloadDirectory": "OpenList download directory: {path}",
-  "@openListDownloadDirectory": {
-    "placeholders": {
-      "path": {
-        "type": "String"
-      }
-    }
-  },
-  "getDownloadDirectoryFailed": "Failed to get download directory: {error}",
-  "@getDownloadDirectoryFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "parseFilenameFailed": "Failed to parse filename: {error}",
-  "@parseFilenameFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "needInstallPermission": "Install Permission Required",
-  "needInstallPermissionDesc": "To install APK files, install permission is required. Please enable it manually in settings.",
-  "goToSettings": "Go to Settings",
-  "needInstallPermissionToInstallApk": "Install permission is required to install APK files",
-  "checkInstallPermissionFailed": "Failed to check install permission: {error}",
-  "@checkInstallPermissionFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "tryToOpenFile": "Trying to open file: {path}",
-  "@tryToOpenFile": {
-    "placeholders": {
-      "path": {
-        "type": "String"
-      }
-    }
-  },
-  "openFileResult": "Open file result: {type} - {message}",
-  "@openFileResult": {
-    "placeholders": {
-      "type": {
-        "type": "String"
-      },
-      "message": {
-        "type": "String"
-      }
-    }
-  },
-  "cannotInstallApkFile": "Cannot install APK file, you may need to enable \"Install unknown apps\" in settings",
-  "noPermissionToInstallApk": "No permission to install APK file, please enable install permission in settings",
-  "openFileException": "Open file exception: {error}",
-  "@openFileException": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "getDownloadFileListFailed": "Failed to get download file list: {error}",
-  "@getDownloadFileListFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "downloadDirectoryCleared": "Download directory cleared",
-  "clearDownloadDirectoryFailed": "Failed to clear download directory: {error}",
-  "@clearDownloadDirectoryFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "fileDeletedLog": "File deleted: {filename}",
-  "@fileDeletedLog": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "deleteFileFailedLog": "Failed to delete file: {error}",
-  "@deleteFileFailedLog": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "preparingDownload": "Preparing download...",
-  "downloadCancelledStatus": "Download cancelled",
-  "notificationManagerInitialized": "Notification manager initialized successfully",
-  "notificationManagerInitFailed": "Failed to initialize notification manager: {error}",
-  "@notificationManagerInitFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "notificationClicked": "Notification clicked: {payload}",
-  "@notificationClicked": {
-    "placeholders": {
-      "payload": {
-        "type": "String"
-      }
-    }
-  },
-  "currentDownloadingFiles": "Currently {count} files are downloading",
-  "@currentDownloadingFiles": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "downloadProgressDesc": "Show file download progress",
-  "viewDownloads": "View Downloads",
-  "showDownloadProgressNotificationFailed": "Failed to show download progress notification: {error}",
-  "@showDownloadProgressNotificationFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "downloadCompleteNotificationTitle": "{filename} download completed",
-  "@downloadCompleteNotificationTitle": {
-    "placeholders": {
-      "filename": {
-        "type": "String"
-      }
-    }
-  },
-  "clickToJumpToDownloadManager": "Click to jump to download manager",
-  "downloadCompleteTitle": "Download Complete",
-  "multipleFilesCompleted": "{count} files completed, click to jump to download manager",
-  "@multipleFilesCompleted": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "downloadCompleteChannel": "Download Complete",
-  "downloadCompleteChannelDesc": "File download complete notification",
-  "openDownloadManager": "Open Download Manager",
-  "showDownloadCompleteNotificationFailed": "Failed to show download complete notification: {error}",
-  "@showDownloadCompleteNotificationFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "showSingleFileCompleteNotificationFailed": "Failed to show single file complete notification: {error}",
-  "@showSingleFileCompleteNotificationFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "cancelDownloadNotificationFailed": "Failed to cancel download notification: {error}",
-  "@cancelDownloadNotificationFailed": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "cancelAllNotificationsFailed": "Failed to cancel all notifications: {error}",
   "@cancelAllNotificationsFailed": {
     "placeholders": {
       "error": {
@@ -389,54 +7,125 @@
       }
     }
   },
-  "showInFileManager": "Show in file manager",
-  "fileSize": "Size: {size}",
-  "@fileSize": {
-    "placeholders": {
-      "size": {
-        "type": "String"
-      }
-    }
-  },
-  "fileTime": "Time: {time}",
-  "@fileTime": {
-    "placeholders": {
-      "time": {
-        "type": "String"
-      }
-    }
-  },
-  "ok": "OK",
-  "openFileManager": "Open File Manager",
-  "fileManagerOpened": "File manager opened",
-  "openFileManagerFailed": "Failed to open file manager: {error}",
-  "@openFileManagerFailed": {
+  "@cancelDownloadNotificationFailed": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
   },
-  "downloadDirectoryOpened": "Download directory opened",
-  "openDownloadDirectoryFailed": "Failed to open download directory: {error}",
-  "@openDownloadDirectoryFailed": {
+  "@checkInstallPermissionFailed": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
   },
-  "downloadDirectoryPathUnknown": "Download directory path unknown",
-  "cannotGetDownloadDirectoryError": "Cannot get download directory",
-  "startDownloadFile": "Start download: {filename}",
-  "@startDownloadFile": {
+  "@clearDownloadDirectoryFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@confirmCancelDownload": {
     "placeholders": {
       "filename": {
         "type": "String"
       }
     }
   },
-  "downloadCompleteFile": "Download complete: {filename}",
+  "@confirmDeleteFile": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "@confirmDeleteRecord": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "@connectionFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@createOpenListDirectoryFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@createOpenListDownloadDirectory": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@currentDownloadingFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteFileFailedLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteItemConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteItemsConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteSiteConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteStorageConfirm": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@downloadCancelled": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "@downloadComplete": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
   "@downloadCompleteFile": {
     "placeholders": {
       "filename": {
@@ -444,7 +133,13 @@
       }
     }
   },
-  "downloadFailedFile": "Download failed: {filename}",
+  "@downloadCompleteNotificationTitle": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
   "@downloadFailedFile": {
     "placeholders": {
       "filename": {
@@ -452,55 +147,27 @@
       }
     }
   },
-  "userCancelledDownloadError": "User cancelled download",
-  "cannotInstallApkNeedPermission": "Cannot install APK file, you may need to enable \"Install unknown apps\" in settings",
-  "noPermissionToInstallApkFile": "No permission to install APK file, please enable install permission in settings",
-  "preparingDownloadStatus": "Preparing download...",
-  "downloadCancelledText": "Download cancelled",
-  "language": "Language",
-  "languageSettings": "Language Settings",
-  "languageSettingsDesc": "Select app display language",
-  "followSystem": "Follow System",
-  "simplifiedChinese": "简体中文",
-  "english": "English",
-  "troubleshooting": "Troubleshooting",
-  "troubleshootingDesc": "Common issues and solutions",
-  "databaseNotSavedIssue": "Database Not Saved Issue",
-  "databaseNotSavedIssueDesc": "If you don't manually close OpenList, the database may not be saved to the corresponding db file. If you encounter this issue, please manually close the app to resolve it. (The switch is located in the main program menu on the OpenList interface, as well as in the notification bar)",
-  "autoStartIssue": "Auto-Start Information",
-  "autoStartIssueDesc": "When enabling auto-start, it's recommended to disable battery optimization for the app. Currently, after enabling auto-start, the service will automatically start in the background after system reboot, but may not show a notification in the notification bar. Rest assured, the service is running normally. You can check the service status through the quick settings tile in the notification shade, or return to the main interface to check the service toggle to confirm if the service has started.",
-  "currentlyDownloading": "Downloading",
-  "downloadProgressChannel": "Download Progress",
-  "confirmDownload": "Confirm Download",
-  "confirmDownloadMessage": "Do you want to download this file?",
-  "downloadingImage": "Downloading image...",
-  "laterInstall": "Install Later",
-  "installNow": "Install Now",
-  "directDownloadMethod": "Direct Download",
-  "directDownloadMethodDesc": "Use in-app downloader",
-  "browserDownloadMethod": "Browser Download",
-  "browserDownloadMethodDesc": "Use system browser",
-  "shareLink": "Share Link",
-  "shareLinkDesc": "Share download link",
-  "view": "View",
-  "downloadFunctionTest": "Download Function Test",
-  "testDirectDownloadFunction": "Test direct download function",
-  "testDownloadJsonFile": "Test download JSON file",
-  "testDownloadPngImage": "Test download PNG image",
-  "testDownloadLargeFile": "Test download large file (1MB)",
-  "viewDownloadFiles": "View download files",
-  "checkDownloadManagerForFiles": "Please check download manager via bottom navigation bar to view download files",
-  "viewDownloadDirectory": "View download directory",
-  "getDownloadPathFailed": "Failed to get",
-  "openDownloadTestPage": "Do you want to open download test page?",
-  "description": "Description:",
-  "downloadInstructions": "• Files will be downloaded to system download directory\\n• Download progress will show notifications\\n• You can choose to open file after download completes\\n• If filename exists, a number will be added automatically\\n• Please check download manager via bottom navigation bar to view files",
-  "selectDownloadMethod": "Select download method",
-  "batchDownloadComplete": "Batch download complete",
-  "imageDownloadSuccess": "Image download success",
-  "checkImageInDownloadFolder": "Please check image in download folder",
-  "findApkInDownloadFolder": "Please find APK file in download folder to install",
-  "downloadingFileProgress": "Downloading file {current}/{total}",
+  "@downloadFailedWithError": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "@downloadManagerWithCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@downloadProgress": {
+    "placeholders": {
+      "progress": {
+        "type": "String"
+      }
+    }
+  },
   "@downloadingFileProgress": {
     "placeholders": {
       "current": {
@@ -511,7 +178,13 @@
       }
     }
   },
-  "fileDownloadFailed": "File {index} download failed",
+  "@fileDeletedLog": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
   "@fileDownloadFailed": {
     "placeholders": {
       "index": {
@@ -519,18 +192,51 @@
       }
     }
   },
-  "apkDownloadCompleteMessage": "APK file download completed, do you want to install?",
-  "openlist": "OpenList",
-  "openlistMobile": "OpenList Mobile",
-  "openSourceLicenses": "Open Source Licenses",
-  "viewThirdPartyLicenses": "View third-party licenses",
-  "editOpenListConfig": "Edit OpenList Config",
-  "save": "Save",
-  "saved": "Saved",
-  "edit": "Edit",
-  "preview": "Preview",
-  "fileNotFoundWillCreateOnSave": "File not found. Will create on save.",
-  "loadFailed": "Load failed: {error}",
+  "@fileSize": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "@fileTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@getDownloadDirectoryFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@getDownloadFileListFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@invalidJsonFormat": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      },
+      "line": {
+        "type": "int"
+      }
+    }
+  },
+  "@itemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "@loadFailed": {
     "placeholders": {
       "error": {
@@ -538,35 +244,107 @@
       }
     }
   },
-  "saveFailed": "Save failed: {error}",
-  "@saveFailed": {
+  "@loginFailed": {
     "placeholders": {
       "error": {
         "type": "String"
       }
     }
   },
-  "invalidJsonFormat": "Invalid JSON format at line {line}: {error}",
-  "@invalidJsonFormat": {
+  "@multipleFilesCompleted": {
     "placeholders": {
-      "line": {
+      "count": {
         "type": "int"
-      },
+      }
+    }
+  },
+  "@notificationClicked": {
+    "placeholders": {
+      "payload": {
+        "type": "String"
+      }
+    }
+  },
+  "@notificationManagerInitFailed": {
+    "placeholders": {
       "error": {
         "type": "String"
       }
     }
   },
-  "filePermissionDenied": "File permission denied. Please check app permissions.",
-  "configSavedRestartRequired": "Config saved. Please restart OpenList service to take effect.",
-  "confirmSaveConfigTitle": "Confirm Save",
-  "confirmSaveConfigMessage": "Modifying configuration may cause service unavailable. Are you sure to save?",
-  "saveAndRestart": "Save and Restart",
-  "saveOnly": "Save Only",
-  "restoreBackup": "Restore Backup",
-  "backupRestored": "Backup restored successfully",
-  "noBackupFound": "No backup file found",
-  "restoreBackupFailed": "Restore backup failed: {error}",
+  "@openDownloadDirectoryFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@openFileException": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@openFileFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@openFileManagerFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@openFileResult": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "@openListDownloadDirectory": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@operationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@parseFilenameFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@playbackError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@renamePrompt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "@restoreBackupFailed": {
     "placeholders": {
       "error": {
@@ -574,8 +352,455 @@
       }
     }
   },
+  "@saveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@searchResultCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@selectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@showDownloadCompleteNotificationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@showDownloadProgressNotificationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@showSingleFileCompleteNotificationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@startDownload": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "@startDownloadFile": {
+    "placeholders": {
+      "filename": {
+        "type": "String"
+      }
+    }
+  },
+  "@tryToOpenFile": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "about": "About",
+  "add": "Add",
+  "addSite": "Add site",
+  "additionJson": "Driver config (JSON)",
+  "additionJsonInvalid": "Config JSON is invalid",
+  "additionalItems": "{count} item(s)",
+  "apkDownloadCompleteMessage": "APK file download completed, do you want to install?",
+  "appName": "OpenList",
+  "audioTrack": "Audio",
+  "autoCheckForUpdates": "Auto check for updates",
+  "autoCheckForUpdatesDesc": "Check for updates when app starts",
+  "autoStartIssue": "Auto-Start Information",
+  "autoStartIssueDesc": "When enabling auto-start, it's recommended to disable battery optimization for the app. Currently, after enabling auto-start, the service will automatically start in the background after system reboot, but may not show a notification in the notification bar. Rest assured, the service is running normally. You can check the service status through the quick settings tile in the notification shade, or return to the main interface to check the service toggle to confirm if the service has started.",
+  "autoStartWebPage": "Set web page as startup page",
+  "autoStartWebPageDesc": "Default page when opening main interface",
+  "backAgainToExit": "Press back again to exit",
+  "backupRestored": "Backup restored successfully",
+  "basicInfo": "Basic Info",
+  "batchCopy": "Copy",
+  "batchDelete": "Delete",
+  "batchDownload": "Download",
+  "batchDownloadComplete": "Batch download complete",
+  "batchMove": "Move",
+  "bootAutoStartService": "Boot auto-start service",
+  "bootAutoStartServiceDesc": "Automatically start OpenList service after boot. (Please make sure to grant auto-start permission)",
+  "browserDownload": "Browser Download",
+  "browserDownloadMethod": "Browser Download",
+  "browserDownloadMethodDesc": "Use system browser",
+  "cancel": "Cancel",
+  "cancelAllNotificationsFailed": "Failed to cancel all notifications: {error}",
+  "cancelDownload": "Cancel Download",
+  "cancelDownloadNotificationFailed": "Failed to cancel download notification: {error}",
+  "cancelled": "Cancelled",
+  "cannotGetBaseDownloadDirectory": "Cannot get base download directory",
+  "cannotGetDownloadDirectory": "Cannot get download directory",
+  "cannotGetDownloadDirectoryError": "Cannot get download directory",
+  "cannotInstallApkFile": "Cannot install APK file, you may need to enable \"Install unknown apps\" in settings",
+  "cannotInstallApkNeedPermission": "Cannot install APK file, you may need to enable \"Install unknown apps\" in settings",
+  "cannotPreview": "Preview is not supported for this file type",
+  "checkDownloadManagerForFiles": "Please check download manager via bottom navigation bar to view download files",
+  "checkForUpdates": "Check for updates",
+  "checkImageInDownloadFolder": "Please check image in download folder",
+  "checkInstallPermissionFailed": "Failed to check install permission: {error}",
+  "clear": "Clear",
+  "clearAll": "Clear All",
+  "clearDownloadDirectoryFailed": "Failed to clear download directory: {error}",
+  "clearFailed": "Clear failed",
+  "clearRecords": "Clear Records",
+  "clearSucceeded": "Clear finished",
+  "cleared": "Download directory cleared",
+  "clickToJumpToDownloadManager": "Click to jump to download manager",
+  "close": "Close",
+  "completed": "Completed",
+  "completedTime": "Completed time",
+  "configSavedRestartRequired": "Config saved. Please restart OpenList service to take effect.",
+  "confirm": "OK",
+  "confirmCancelDownload": "Are you sure you want to cancel downloading \"{filename}\"?",
+  "confirmClear": "Confirm Clear",
+  "confirmClearAllFiles": "Are you sure you want to clear all download files? This action cannot be undone.",
+  "confirmDelete": "Confirm Delete",
+  "confirmDeleteFile": "Are you sure you want to delete file \"{filename}\"? This action cannot be undone.",
+  "confirmDeleteRecord": "Are you sure you want to delete the download record of \"{filename}\"?",
+  "confirmDownload": "Confirm Download",
+  "confirmDownloadMessage": "Do you want to download this file?",
+  "confirmSaveConfigMessage": "Modifying configuration may cause service unavailable. Are you sure to save?",
+  "confirmSaveConfigTitle": "Confirm Save",
+  "connectionFailed": "Connection failed: {error}",
+  "connectionOk": "Connection OK",
+  "continueDownload": "Continue Download",
+  "copiedToClipboard": "Copied to clipboard",
+  "copy": "Copy",
+  "copySuccess": "Copied successfully",
+  "copyTo": "Copy to",
+  "createOpenListDirectoryFailed": "Failed to create OpenList directory: {error}",
+  "createOpenListDownloadDirectory": "Create OpenList download directory: {path}",
+  "createSuccess": "Created successfully",
+  "createdTime": "Created",
+  "currentDownloadingFiles": "Currently {count} files are downloading",
+  "currentIsLatestVersion": "Current is latest version",
+  "currentlyDownloading": "Downloading",
+  "dataDirectory": "data Directory",
+  "databaseNotSavedIssue": "Database Not Saved Issue",
+  "databaseNotSavedIssueDesc": "If you don't manually close OpenList, the database may not be saved to the corresponding db file. If you encounter this issue, please manually close the app to resolve it. (The switch is located in the main program menu on the OpenList interface, as well as in the notification bar)",
+  "defaultSite": "Default site",
+  "delete": "Delete",
+  "deleteFailed": "Delete failed",
+  "deleteFile": "Delete file",
+  "deleteFileFailedLog": "Failed to delete file: {error}",
+  "deleteItemConfirm": "Delete \"{name}\"?",
+  "deleteItemsConfirm": "Delete {count} selected item(s)?",
+  "deleteRecord": "Delete record",
+  "deleteSiteConfirm": "Delete site \"{name}\"?",
+  "deleteStorage": "Delete storage",
+  "deleteStorageConfirm": "Delete storage {path}?",
+  "deleteSuccess": "Deleted successfully",
+  "description": "Description:",
+  "desktopShortcut": "Desktop shortcut",
+  "directDownload": "Direct Download",
+  "directDownloadApk": "Direct Download APK",
+  "directDownloadMethod": "Direct Download",
+  "directDownloadMethodDesc": "Use in-app downloader",
+  "doneTasks": "Finished",
+  "download": "download",
+  "downloadApk": "Download APK",
+  "downloadCancelled": "Download cancelled: {url}",
+  "downloadCancelledStatus": "Download cancelled",
+  "downloadCancelledText": "Download cancelled",
+  "downloadComplete": "Download complete: {filename}",
+  "downloadCompleteChannel": "Download Complete",
+  "downloadCompleteChannelDesc": "File download complete notification",
+  "downloadCompleteFile": "Download complete: {filename}",
+  "downloadCompleteNotificationTitle": "{filename} download completed",
+  "downloadCompleteTitle": "Download Complete",
+  "downloadDirectory": "Download Directory",
+  "downloadDirectoryCleared": "Download directory cleared",
+  "downloadDirectoryOpened": "Download directory opened",
+  "downloadDirectoryPathUnknown": "Download directory path unknown",
+  "downloadFailed": "Download failed",
+  "downloadFailedFile": "Download failed: {filename}",
+  "downloadFailedWithError": "Download failed: {filename}",
+  "downloadFunctionTest": "Download Function Test",
+  "downloadInstructions": "• Files will be downloaded to system download directory\\n• Download progress will show notifications\\n• You can choose to open file after download completes\\n• If filename exists, a number will be added automatically\\n• Please check download manager via bottom navigation bar to view files",
+  "downloadManager": "Download",
+  "downloadManagerWithCount": "Download ({count})",
+  "downloadProgress": "Download progress: {progress}%",
+  "downloadProgressChannel": "Download Progress",
+  "downloadProgressDesc": "Show file download progress",
+  "downloadRecordsCleared": "Download records cleared",
+  "downloadStarted": "Download started",
+  "downloadThisFile": "Download this file？",
+  "downloadToOpen": "Download and open with another app",
+  "downloading": "Downloading",
+  "downloadingFileProgress": "Downloading file {current}/{total}",
+  "downloadingImage": "Downloading image...",
+  "driver": "Driver",
+  "driverSpecific": "Driver specific options",
+  "edit": "Edit",
+  "editOpenListConfig": "Edit OpenList Config",
+  "editSite": "Edit site",
+  "editStorage": "Edit storage",
+  "embeddedSite": "Embedded site",
+  "embeddedSiteDesc": "The OpenList server built into this app",
+  "embeddedUserManaged": "Managed automatically by the app (built-in account, password-free)",
+  "emptyFolder": "This folder is empty",
+  "emptyList": "Nothing here",
+  "enableWebBrowser": "Enable embedded web browser",
+  "enableWebBrowserDesc": "Allow the Web page to run the embedded browser",
+  "english": "English",
+  "enterOtp": "Enter the 2FA code",
+  "failed": "Failed",
+  "fileDeleted": "File deleted",
+  "fileDeletedLog": "File deleted: {filename}",
+  "fileDetails": "File details",
+  "fileDownloadFailed": "File {index} download failed",
+  "fileInfo": "File info",
+  "fileLocation": "File Location",
+  "fileLocationTip": "You can use a file manager to find this file, or try installing the appropriate app to open it.",
+  "fileManagerOpened": "File manager opened",
+  "fileName": "File name",
+  "fileNotFound": "File not found or has been deleted",
+  "fileNotFoundWillCreateOnSave": "File not found. Will create on save.",
+  "filePath": "Path",
+  "filePermissionDenied": "File permission denied. Please check app permissions.",
+  "fileSavedTo": "File saved to:",
+  "fileSize": "Size: {size}",
+  "fileTime": "Time: {time}",
+  "filesTab": "Files",
+  "findApkInDownloadFolder": "Please find APK file in download folder to install",
+  "folderName": "Folder name",
+  "folderPassword": "Folder password",
+  "followSystem": "Follow System",
+  "general": "General",
+  "generalSettings": "General",
+  "getDownloadDirectoryFailed": "Failed to get download directory: {error}",
+  "getDownloadFileListFailed": "Failed to get download file list: {error}",
+  "getDownloadPathFailed": "Failed to get",
+  "goTo": "GO",
+  "goToSettings": "Go to Settings",
+  "grantManagerStoragePermission": "Grant [Manage external storage] permission",
+  "grantNotificationPermission": "Grant [Notification] permission",
+  "grantNotificationPermissionDesc": "Used for foreground service keep alive",
+  "grantStoragePermission": "Grant [external storage] permission",
+  "grantStoragePermissionDesc": "Mounting local storage is a must, otherwise no permission to read and write files",
+  "imageDownloadSuccess": "Image download success",
+  "importConfig": "Import config",
+  "importSuccess": "Config imported",
+  "importantSettings": "Important settings",
+  "inProgress": "In Progress",
+  "initServerHint": "Set up an admin account to finish initialization",
+  "initSiteTitle": "Site title",
+  "initialize": "Initialize",
+  "initializingNotificationManager": "Initializing notification manager",
+  "installNow": "Install Now",
+  "invalidJsonFormat": "Invalid JSON format at line {line}: {error}",
+  "itemsCount": "{count} items",
+  "jumpToOtherApp": "Jump to other app？",
+  "language": "Language",
+  "languageSettings": "Language Settings",
+  "languageSettingsDesc": "Select app display language",
+  "laterInstall": "Install Later",
+  "loadDownloadFilesFailed": "Failed to load download files",
+  "loadFailed": "Load failed: {error}",
+  "loading": "Loading...",
+  "lockScreen": "Lock",
+  "login": "Sign in",
+  "loginFailed": "Sign in failed: {error}",
+  "manage": "Manage",
+  "modifiedTime": "Modified time",
+  "modifyAdminPassword": "Modify Admin Password",
+  "moreOptions": "More options",
+  "mountPath": "Mount path",
+  "mountPathInvalid": "Mount path must start with /",
+  "mountStorage": "Mount storage",
+  "mountSuccess": "Storage mounted",
+  "move": "Move",
+  "moveSuccess": "Moved successfully",
+  "moveTo": "Move to",
+  "multipleFilesCompleted": "{count} files completed, click to jump to download manager",
+  "needInstallPermission": "Install Permission Required",
+  "needInstallPermissionDesc": "To install APK files, install permission is required. Please enable it manually in settings.",
+  "needInstallPermissionToInstallApk": "Install permission is required to install APK files",
+  "newFolder": "New folder",
+  "newVersionFound": "New Version Found",
+  "noActiveDownloads": "No active downloads",
+  "noAppToOpenFile": "No app found to open this file",
+  "noBackupFound": "No backup file found",
+  "noCompletedDownloads": "No completed downloads",
+  "noMoreData": "No more data",
+  "noPermissionToInstallApk": "No permission to install APK file, please enable install permission in settings",
+  "noPermissionToInstallApkFile": "No permission to install APK file, please enable install permission in settings",
+  "noPermissionToOpenFile": "No permission to open this file",
+  "notificationClicked": "Notification clicked: {payload}",
+  "notificationManagerInitFailed": "Failed to initialize notification manager: {error}",
+  "notificationManagerInitialized": "Notification manager initialized successfully",
+  "ok": "OK",
+  "open": "Open",
+  "openDirectory": "Open Directory",
+  "openDownloadDirectoryFailed": "Failed to open download directory: {error}",
+  "openDownloadManager": "Open Download Manager",
+  "openDownloadTestPage": "Do you want to open download test page?",
+  "openFile": "Open file",
+  "openFileException": "Open file exception: {error}",
+  "openFileFailed": "Failed to open file: {error}",
+  "openFileManager": "Open File Manager",
+  "openFileManagerFailed": "Failed to open file manager: {error}",
+  "openFileResult": "Open file result: {type} - {message}",
+  "openListDownloadDirectory": "OpenList download directory: {path}",
+  "openSourceLicenses": "Open Source Licenses",
+  "openWebAdmin": "Open web admin",
+  "openWebAdminDesc": "Open current site in system default browser",
+  "openlist": "OpenList",
+  "openlistMobile": "OpenList Mobile",
+  "operationFailed": "Operation failed: {error}",
+  "operationSuccess": "Operation succeeded",
+  "otpCodeHint": "6-digit code",
+  "otpRequired": "2FA code required",
+  "parseFilenameFailed": "Failed to parse filename: {error}",
+  "pending": "Pending",
+  "playbackError": "Playback failed: {error}",
+  "playerSpeed": "Speed",
+  "preparingDownload": "Preparing download...",
+  "preparingDownloadStatus": "Preparing download...",
+  "preview": "Preview",
+  "protectedFolder": "This folder is password protected",
+  "qrExport": "Export as QR",
+  "qrExportHint": "Scan this QR in another device to import the config",
+  "qrImport": "Scan QR to import",
+  "qrInvalid": "QR content is not a valid config",
+  "qrScanHint": "Point the camera at a QR code",
+  "qrScanTitle": "Scan QR code",
+  "refresh": "Refresh",
+  "releasePage": "Release Page",
+  "remark": "Remark",
+  "rename": "Rename",
+  "renamePrompt": "Rename \"{name}\"",
+  "renameSuccess": "Renamed successfully",
+  "resetEmbeddedPwd": "Reset embedded admin password",
+  "resetEmbeddedPwdDesc": "Reset it if you forgot the password, then sign in again",
+  "resetPwdDone": "Password reset. Please sign in with the new password",
   "restartingService": "Restarting OpenList service...",
-  "serviceRestartSuccess": "Service restarted successfully",
+  "restoreBackup": "Restore Backup",
+  "restoreBackupFailed": "Restore backup failed: {error}",
+  "retry": "Retry",
+  "rootDir": "Root",
+  "rootFolderPath": "Root folder path",
+  "running": "Running",
+  "save": "Save",
+  "saveAndRestart": "Save and Restart",
+  "saveFailed": "Save failed: {error}",
+  "saveOnly": "Save Only",
+  "saveSuccess": "Saved",
+  "saved": "Saved",
+  "search": "Search",
+  "searchDriver": "Search driver",
+  "searchKeywordsHint": "Type keywords to search",
+  "searchNotEnabled": "Server search index is not enabled. Turn it on in the admin panel",
+  "searchResultCount": "{count} result(s) found",
+  "searching": "Searching...",
+  "selectAll": "Select all",
+  "selectAppToOpen": "Select app to open",
+  "selectDownloadMethod": "Select download method",
+  "selectedCount": "{count} selected",
+  "serverNotInitialized": "Server is not initialized",
   "serviceRestartFailed": "Failed to restart service. Please restart manually.",
-  "serviceRestartOnlyAndroid": "Service restart is only supported on Android"
+  "serviceRestartOnlyAndroid": "Service restart is only supported on Android",
+  "serviceRestartSuccess": "Service restarted successfully",
+  "sessionExpired": "Session expired, signing in again...",
+  "setAdminPassword": "Set Admin password",
+  "setAsDefault": "Set as default",
+  "setDefaultDirectory": "Set as default directory?",
+  "settings": "Settings",
+  "shareFeatureNotImplemented": "Share feature not implemented yet",
+  "shareFile": "Share file",
+  "shareLink": "Share Link",
+  "shareLinkDesc": "Share download link",
+  "showDownloadCompleteNotificationFailed": "Failed to show download complete notification: {error}",
+  "showDownloadProgressNotificationFailed": "Failed to show download progress notification: {error}",
+  "showHiddenFiles": "Show hidden files",
+  "showInFileManager": "Show in file manager",
+  "showSingleFileCompleteNotificationFailed": "Failed to show single file complete notification: {error}",
+  "silentJumpApp": "Silent jump app",
+  "silentJumpAppDesc": "Jump to other app without prompt",
+  "simplifiedChinese": "简体中文",
+  "siteManage": "Site manager",
+  "siteName": "Site name",
+  "siteOtpCode": "2FA code (optional)",
+  "sitePassword": "Password",
+  "siteUrlHint": "e.g. http://192.168.1.10:5244",
+  "siteUsername": "Username",
+  "size": "Size",
+  "sort": "Sort",
+  "sortByName": "By name",
+  "sortByTime": "By time",
+  "sortByType": "By type",
+  "startDownload": "Start download: {filename}",
+  "startDownloadFile": "Start download: {filename}",
+  "startTime": "Start time",
+  "startWebBrowser": "Start web browser",
+  "stopWebBrowser": "Stop",
+  "stopped": "Stopped",
+  "storageEmpty": "No storages mounted yet",
+  "storageManage": "Storage management",
+  "storageManageDesc": "Mount, import, edit, enable/disable server storages",
+  "targetFolder": "Target folder",
+  "taskEmpty": "No tasks",
+  "taskManage": "Server tasks",
+  "taskManageDesc": "Offline download / upload / copy / move / decompress tasks",
+  "testConnection": "Test connection",
+  "testDirectDownloadFunction": "Test direct download function",
+  "testDownloadJsonFile": "Test download JSON file",
+  "testDownloadLargeFile": "Test download large file (1MB)",
+  "testDownloadPngImage": "Test download PNG image",
+  "testing": "Testing connection...",
+  "textTooLarge": "File is too large to preview (> 1MB)",
+  "troubleshooting": "Troubleshooting",
+  "troubleshootingDesc": "Common issues and solutions",
+  "tryToOpenFile": "Trying to open file: {path}",
+  "uiSettings": "UI",
+  "undoneTasks": "In progress",
+  "unknownDuration": "Unknown duration",
+  "unlockScreen": "Unlock screen",
+  "upload": "Upload",
+  "uploadFailed": "Upload failed: {error}",
+  "uploadFile": "Upload files",
+  "uploadSuccess": "Upload succeeded",
+  "uploading": "Uploading...",
+  "userCancelledDownload": "User cancelled download",
+  "userCancelledDownloadError": "User cancelled download",
+  "view": "View",
+  "viewDownloadDirectory": "View download directory",
+  "viewDownloadFiles": "View download files",
+  "viewDownloads": "View Downloads",
+  "viewLocation": "View Location",
+  "viewThirdPartyLicenses": "View third-party licenses",
+  "wakeLock": "Wake lock",
+  "wakeLockDesc": "Prevent CPU from sleeping when screen is off. (May cause app killed in background on some devices)",
+  "webBrowserDownloadInProgress": "The browser cannot stop while a download is in progress",
+  "webBrowserStatus": "Embedded web browser",
+  "webBrowserStopped": "The embedded web browser is stopped",
+  "webPage": "Web Page",
+  "wrongPassword": "Wrong password"
 }

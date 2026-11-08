@@ -56,3 +56,17 @@ local.properties
 
 android/app/.cxx
 android/app/build
+
+# OpenList Go source cloned by openlist-lib/scripts/init_openlist.sh
+# (keep the binding package and scripts themselves tracked)
+/openlist-lib/*
+!/openlist-lib/openlistlib/
+!/openlist-lib/scripts/
+*.jks
+
+# Local test assets & tooling artifacts
+/天空之城.mp4
+*.mp4
+.zcode/
+.mimosa/
+**/.mimosa/

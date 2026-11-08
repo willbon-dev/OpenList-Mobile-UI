@@ -257,8 +257,8 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
         final match = RegExp(r'line (\d+)').firstMatch(e.message);
         final line = match != null ? int.tryParse(match.group(1) ?? '') : null;
         Get.showSnackbar(GetSnackBar(
-          message: line != null 
-            ? S.of(context).invalidJsonFormat(line, e.message)
+          message: line != null
+            ? S.of(context).invalidJsonFormat(e.message, line)
             : S.of(context).saveFailed(e.message),
           duration: const Duration(seconds: 3),
           backgroundColor: Colors.red,
