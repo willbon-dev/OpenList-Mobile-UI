@@ -274,6 +274,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteStorageConfirm": m16,
     "deleteSuccess": MessageLookupByLibrary.simpleMessage("删除成功"),
     "description": MessageLookupByLibrary.simpleMessage("说明："),
+    "deselectAll": MessageLookupByLibrary.simpleMessage("取消全选"),
     "desktopShortcut": MessageLookupByLibrary.simpleMessage("桌面快捷方式"),
     "directDownload": MessageLookupByLibrary.simpleMessage("直接下载"),
     "directDownloadApk": MessageLookupByLibrary.simpleMessage("直接下载APK"),

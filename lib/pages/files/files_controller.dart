@@ -527,8 +527,11 @@ class FilesController extends GetxController {
 
   // ----------------------------------------------------------- selection
 
+  bool isSelected(FsObj obj) =>
+      selected.any((e) => e.name == obj.name);
+
   void toggleSelect(FsObj obj) {
-    if (selected.any((e) => e.name == obj.name)) {
+    if (isSelected(obj)) {
       selected.removeWhere((e) => e.name == obj.name);
     } else {
       selected.add(obj);
@@ -548,6 +551,16 @@ class FilesController extends GetxController {
 
   void selectAll() {
     selected.assignAll(items);
+  }
+
+  /// AppBar 全选按钮：已全选（含超出）时再次点击 → 清空并退出多选；
+  /// 部分选中 → 全选
+  void toggleSelectAll() {
+    if (items.isNotEmpty && selected.length >= items.length) {
+      exitSelectionMode();
+    } else {
+      selectAll();
+    }
   }
 
   // --------------------------------------------------------- fs mutations

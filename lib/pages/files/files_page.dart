@@ -39,6 +39,8 @@ class _FilesAppBar extends StatelessWidget implements PreferredSizeWidget {
     final controller = Get.find<FilesController>();
     return Obx(() {
       if (controller.selectionMode.value) {
+        final allSelected = controller.items.isNotEmpty &&
+            controller.selected.length >= controller.items.length;
         return AppBar(
           leading: IconButton(
             icon: const Icon(Icons.close),
@@ -47,9 +49,11 @@ class _FilesAppBar extends StatelessWidget implements PreferredSizeWidget {
           title: Text(S.current.selectedCount(controller.selected.length)),
           actions: [
             IconButton(
-              icon: const Icon(Icons.select_all),
-              tooltip: S.current.selectAll,
-              onPressed: controller.selectAll,
+              icon: Icon(allSelected ? Icons.deselect : Icons.select_all),
+              tooltip: allSelected
+                  ? S.current.deselectAll
+                  : S.current.selectAll,
+              onPressed: controller.toggleSelectAll,
             ),
           ],
         );
@@ -404,11 +408,19 @@ class _FilesBody extends StatelessWidget {
                           : const SizedBox.shrink());
                     }
                     final obj = controller.items[index];
-                    return FileListTile(
-                      obj: obj,
-                      onTap: () => _onItemTap(context, obj),
-                      onLongPress: () => _onItemLongPress(context, obj),
-                    );
+                    // 每行独立 Obx 监听多选状态：勾选/取消只重建该行
+                    return Obx(() {
+                      final inSel = controller.selectionMode.value;
+                      final isSel =
+                          inSel && controller.isSelected(obj);
+                      return FileListTile(
+                        obj: obj,
+                        selectionMode: inSel,
+                        selected: isSel,
+                        onTap: () => _onItemTap(context, obj),
+                        onLongPress: () => _onItemLongPress(context, obj),
+                      );
+                    });
                   },
                 ),
               ),

@@ -784,6 +784,11 @@ class S {
     return Intl.message('说明：', name: 'description', desc: '', args: []);
   }
 
+  /// `取消全选`
+  String get deselectAll {
+    return Intl.message('取消全选', name: 'deselectAll', desc: '', args: []);
+  }
+
   /// `桌面快捷方式`
   String get desktopShortcut {
     return Intl.message('桌面快捷方式', name: 'desktopShortcut', desc: '', args: []);

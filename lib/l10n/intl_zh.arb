@@ -518,6 +518,7 @@
   "deleteStorageConfirm": "确认删除存储 {path}？",
   "deleteSuccess": "删除成功",
   "description": "说明：",
+  "deselectAll": "取消全选",
   "desktopShortcut": "桌面快捷方式",
   "directDownload": "直接下载",
   "directDownloadApk": "直接下载APK",

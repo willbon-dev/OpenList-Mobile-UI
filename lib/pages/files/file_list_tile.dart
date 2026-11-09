@@ -10,11 +10,19 @@ class FileListTile extends StatelessWidget {
   final VoidCallback onTap;
   final VoidCallback onLongPress;
 
+  /// 多选模式：trailing 显示勾选圆圈，行可点选
+  final bool selectionMode;
+
+  /// 当前条目是否已被勾选（配合 [selectionMode] 高亮）
+  final bool selected;
+
   const FileListTile({
     super.key,
     required this.obj,
     required this.onTap,
     required this.onLongPress,
+    this.selectionMode = false,
+    this.selected = false,
   });
 
   @override
@@ -40,8 +48,17 @@ class FileListTile extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.bodySmall,
             ),
-      trailing: obj.isDir
-          ? const Icon(Icons.chevron_right)
+      trailing: selectionMode
+          ? Icon(
+              selected ? Icons.check_circle : Icons.circle_outlined,
+              size: 24,
+              color: selected
+                  ? theme.colorScheme.primary
+                  : theme.colorScheme.outline,
+            )
+          : (obj.isDir ? const Icon(Icons.chevron_right) : null),
+      tileColor: selected
+          ? theme.colorScheme.primaryContainer.withValues(alpha: 0.45)
           : null,
       onTap: onTap,
       onLongPress: onLongPress,

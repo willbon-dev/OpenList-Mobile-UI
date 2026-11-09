@@ -518,6 +518,7 @@
   "deleteStorageConfirm": "Delete storage {path}?",
   "deleteSuccess": "Deleted successfully",
   "description": "Description:",
+  "deselectAll": "Deselect all",
   "desktopShortcut": "Desktop shortcut",
   "directDownload": "Direct Download",
   "directDownloadApk": "Direct Download APK",

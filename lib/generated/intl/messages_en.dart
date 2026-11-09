@@ -325,6 +325,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Deleted successfully",
     ),
     "description": MessageLookupByLibrary.simpleMessage("Description:"),
+    "deselectAll": MessageLookupByLibrary.simpleMessage("Deselect all"),
     "desktopShortcut": MessageLookupByLibrary.simpleMessage("Desktop shortcut"),
     "directDownload": MessageLookupByLibrary.simpleMessage("Direct Download"),
     "directDownloadApk": MessageLookupByLibrary.simpleMessage(
