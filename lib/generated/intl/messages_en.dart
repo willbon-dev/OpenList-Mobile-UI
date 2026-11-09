@@ -508,6 +508,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "installNow": MessageLookupByLibrary.simpleMessage("Install Now"),
     "invalidJsonFormat": m32,
     "itemsCount": m33,
+    "jsonExport": MessageLookupByLibrary.simpleMessage("Export JSON"),
+    "jsonImport": MessageLookupByLibrary.simpleMessage("Import JSON"),
+    "jsonImportHint": MessageLookupByLibrary.simpleMessage(
+      "Paste storage config JSON",
+    ),
+    "jsonInvalid": MessageLookupByLibrary.simpleMessage(
+      "Failed to parse JSON or not a valid storage config",
+    ),
     "jumpToOtherApp": MessageLookupByLibrary.simpleMessage(
       "Jump to other app？",
     ),

@@ -1544,6 +1544,36 @@ class S {
     );
   }
 
+  /// `JSON 导出`
+  String get jsonExport {
+    return Intl.message('JSON 导出', name: 'jsonExport', desc: '', args: []);
+  }
+
+  /// `JSON 导入`
+  String get jsonImport {
+    return Intl.message('JSON 导入', name: 'jsonImport', desc: '', args: []);
+  }
+
+  /// `粘贴存储配置 JSON`
+  String get jsonImportHint {
+    return Intl.message(
+      '粘贴存储配置 JSON',
+      name: 'jsonImportHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `JSON 解析失败或不是有效的存储配置`
+  String get jsonInvalid {
+    return Intl.message(
+      'JSON 解析失败或不是有效的存储配置',
+      name: 'jsonInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `跳转到其他APP ？`
   String get jumpToOtherApp {
     return Intl.message(

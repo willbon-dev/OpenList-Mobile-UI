@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -116,11 +117,27 @@ class _StorageManagePageState extends State<StorageManagePage> {
       if (decoded is! Map<String, dynamic> || !decoded.containsKey('driver')) {
         throw const FormatException('not a storage config');
       }
-      final existing = StorageInfo(decoded);
-      await _openEditor(existing: existing);
+      await _openEditor(existing: StorageInfo(decoded));
     } catch (e) {
       Get.showSnackbar(GetSnackBar(
           message: S.current.qrInvalid,
+          duration: const Duration(seconds: 3)));
+    }
+  }
+
+  /// JSON 挂载：粘贴存储配置 JSON 后进入预填好的编辑页
+  Future<void> _jsonMount() async {
+    final text = await _askJsonText();
+    if (text == null || text.isEmpty || !mounted) return;
+    try {
+      final decoded = jsonDecode(text);
+      if (decoded is! Map<String, dynamic> || !decoded.containsKey('driver')) {
+        throw const FormatException('not a storage config');
+      }
+      await _openEditor(existing: StorageInfo(decoded));
+    } catch (e) {
+      Get.showSnackbar(GetSnackBar(
+          message: S.current.jsonInvalid,
           duration: const Duration(seconds: 3)));
     }
   }
@@ -133,6 +150,17 @@ class _StorageManagePageState extends State<StorageManagePage> {
         title: Text(S.current.storageManage),
         actions: [
           IconButton(icon: const Icon(Icons.refresh), onPressed: _load),
+          PopupMenuButton<String>(
+            tooltip: S.current.moreOptions,
+            onSelected: (v) {
+              if (v == 'json_import') _jsonMount();
+            },
+            itemBuilder: (_) => [
+              PopupMenuItem(
+                  value: 'json_import',
+                  child: Text(S.current.jsonImport)),
+            ],
+          ),
         ],
       ),
       floatingActionButton: Column(
@@ -210,6 +238,35 @@ class _StorageManagePageState extends State<StorageManagePage> {
                     ),
     );
   }
+}
+
+/// 弹出多行文本输入框，返回确认后的内容（取消返回 null）。
+/// 列表页 JSON 挂载与编辑页 JSON 导入共用。
+Future<String?> _askJsonText() async {
+  final ctrl = TextEditingController();
+  final ok = await Get.dialog<bool>(AlertDialog(
+    title: Text(S.current.jsonImport),
+    content: SizedBox(
+      width: 340,
+      child: TextField(
+        controller: ctrl,
+        maxLines: 8,
+        decoration: InputDecoration(
+          hintText: S.current.jsonImportHint,
+          border: const OutlineInputBorder(),
+        ),
+      ),
+    ),
+    actions: [
+      TextButton(onPressed: () => Get.back(), child: Text(S.current.cancel)),
+      FilledButton(
+          onPressed: () => Get.back(result: true),
+          child: Text(S.current.confirm)),
+    ],
+  ));
+  final text = ctrl.text.trim();
+  ctrl.dispose();
+  return ok == true ? text : null;
 }
 
 /// 挂载/编辑存储。编辑时 [existing] 非空。
@@ -394,7 +451,30 @@ class _StorageEditPageState extends State<_StorageEditPage> {
     }
   }
 
-  /// 二维码扫描导入：含 driver 的整体配置，否则视为 addition 配置合并
+  /// 将解码后的配置应用到表单：
+  /// 含 driver 的整体配置 → 全量应用；否则视为 addition 配置合并
+  Future<void> _applyDecodedConfig(Map<String, dynamic> decoded) async {
+    if (decoded.containsKey('driver')) {
+      final storage = StorageInfo(decoded);
+      setState(() {
+        _driver = storage.driver;
+        _mountCtrl.text = storage.mountPath;
+        _remarkCtrl.text = storage.remark;
+      });
+      await _fetchDriverInfo();
+      // 拉取定义后用导入数据覆盖默认值
+      setState(() {
+        _applyImported(_driverInfo?.additional ?? const [], storage.additionMap);
+        _applyImported(_dynamicCommonItems, storage.raw);
+      });
+    } else {
+      setState(() {
+        _applyImported(_driverInfo?.additional ?? const [], decoded);
+      });
+    }
+  }
+
+  /// 二维码扫描导入
   Future<void> _scanImport() async {
     final scanned = await Navigator.of(context).push<String>(
       MaterialPageRoute(builder: (_) => const QrScanPage()),
@@ -405,24 +485,7 @@ class _StorageEditPageState extends State<_StorageEditPage> {
       if (decoded is! Map<String, dynamic>) {
         throw const FormatException('not an object');
       }
-      if (decoded.containsKey('driver')) {
-        final storage = StorageInfo(decoded);
-        setState(() {
-          _driver = storage.driver;
-          _mountCtrl.text = storage.mountPath;
-          _remarkCtrl.text = storage.remark;
-        });
-        await _fetchDriverInfo();
-        // 拉取定义后用扫码数据覆盖默认值
-        setState(() {
-          _applyImported(_driverInfo?.additional ?? const [], storage.additionMap);
-          _applyImported(_dynamicCommonItems, storage.raw);
-        });
-      } else {
-        setState(() {
-          _applyImported(_driverInfo?.additional ?? const [], decoded);
-        });
-      }
+      await _applyDecodedConfig(decoded);
       Get.showSnackbar(GetSnackBar(
           message: S.current.importSuccess,
           duration: const Duration(seconds: 2)));
@@ -431,6 +494,60 @@ class _StorageEditPageState extends State<_StorageEditPage> {
           message: S.current.qrInvalid,
           duration: const Duration(seconds: 3)));
     }
+  }
+
+  /// JSON 粘贴导入
+  Future<void> _importJson() async {
+    final text = await _askJsonText();
+    if (text == null || text.isEmpty || !mounted) return;
+    try {
+      final decoded = jsonDecode(text);
+      if (decoded is! Map<String, dynamic>) {
+        throw const FormatException('not an object');
+      }
+      await _applyDecodedConfig(decoded);
+      if (!mounted) return;
+      Get.showSnackbar(GetSnackBar(
+          message: S.current.importSuccess,
+          duration: const Duration(seconds: 2)));
+    } catch (e) {
+      Get.showSnackbar(GetSnackBar(
+          message: S.current.jsonInvalid,
+          duration: const Duration(seconds: 3)));
+    }
+  }
+
+  /// 当前配置 JSON（格式化展示 + 复制）
+  void _showExportJson() {
+    final pretty =
+        const JsonEncoder.withIndent('  ').convert(jsonDecode(_configJson()));
+    Get.dialog(AlertDialog(
+      title: Text(S.current.jsonExport),
+      content: SizedBox(
+        width: 340,
+        child: SingleChildScrollView(
+          child: SelectableText(
+            pretty,
+            style: const TextStyle(
+                fontFamily: 'monospace', fontSize: 13, height: 1.4),
+          ),
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Clipboard.setData(ClipboardData(text: pretty));
+            Get.back();
+            Get.showSnackbar(GetSnackBar(
+                message: S.current.copiedToClipboard,
+                duration: const Duration(seconds: 1)));
+          },
+          child: Text(S.current.copy),
+        ),
+        TextButton(
+            onPressed: () => Get.back(), child: Text(S.current.confirm)),
+      ],
+    ));
   }
 
   /// 驱动选择底部弹层：有动画、支持搜索、显示中文名
@@ -518,10 +635,27 @@ class _StorageEditPageState extends State<_StorageEditPage> {
               tooltip: S.current.qrImport,
               icon: const Icon(Icons.qr_code_scanner),
               onPressed: _scanImport),
-          IconButton(
-              tooltip: S.current.qrExport,
-              icon: const Icon(Icons.qr_code),
-              onPressed: info == null ? null : _showExportQr),
+          PopupMenuButton<String>(
+            tooltip: S.current.moreOptions,
+            onSelected: (v) {
+              if (v == 'json_import') _importJson();
+              if (v == 'json_export') _showExportJson();
+              if (v == 'qr_export') _showExportQr();
+            },
+            itemBuilder: (_) => [
+              PopupMenuItem(
+                  value: 'json_import',
+                  child: Text(S.current.jsonImport)),
+              PopupMenuItem(
+                  value: 'json_export',
+                  enabled: info != null,
+                  child: Text(S.current.jsonExport)),
+              PopupMenuItem(
+                  value: 'qr_export',
+                  enabled: info != null,
+                  child: Text(S.current.qrExport)),
+            ],
+          ),
         ],
         bottom: _saving
             ? const PreferredSize(
