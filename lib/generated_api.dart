@@ -408,6 +408,36 @@ class NativeCommon {
     }
   }
 
+  /// 用系统查看器/播放器直接打开本地文件（ACTION_VIEW + FileProvider），
+  /// 不触发媒体权限弹窗；无应用可打开或文件不存在返回 false
+  Future<bool> openFileWithViewer(String path) async {
+    final String pigeonVar_channelName = 'dev.flutter.pigeon.openlist_mobile.NativeCommon.openFileWithViewer$pigeonVar_messageChannelSuffix';
+    final BasicMessageChannel<Object?> pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[path]);
+    final List<Object?>? pigeonVar_replyList =
+        await pigeonVar_sendFuture as List<Object?>?;
+    if (pigeonVar_replyList == null) {
+      throw _createConnectionError(pigeonVar_channelName);
+    } else if (pigeonVar_replyList.length > 1) {
+      throw PlatformException(
+        code: pigeonVar_replyList[0]! as String,
+        message: pigeonVar_replyList[1] as String?,
+        details: pigeonVar_replyList[2],
+      );
+    } else if (pigeonVar_replyList[0] == null) {
+      throw PlatformException(
+        code: 'null-error',
+        message: 'Host platform returned null value for non-null return value.',
+      );
+    } else {
+      return (pigeonVar_replyList[0] as bool?)!;
+    }
+  }
+
   Future<int> getDeviceSdkInt() async {
     final String pigeonVar_channelName = 'dev.flutter.pigeon.openlist_mobile.NativeCommon.getDeviceSdkInt$pigeonVar_messageChannelSuffix';
     final BasicMessageChannel<Object?> pigeonVar_channel = BasicMessageChannel<Object?>(

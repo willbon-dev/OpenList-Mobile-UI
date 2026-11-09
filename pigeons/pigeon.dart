@@ -31,6 +31,10 @@ abstract class AppConfig {
 abstract class NativeCommon {
   bool startActivityFromUri(String intentUri);
 
+  /// 用系统查看器/播放器直接打开本地文件（ACTION_VIEW + FileProvider），
+  /// 不触发媒体权限弹窗；无应用可打开或文件不存在返回 false
+  bool openFileWithViewer(String path);
+
   int getDeviceSdkInt();
 
   String getDeviceCPUABI();

@@ -1,8 +1,10 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:open_file_manager/open_file_manager.dart';
+import '../generated_api.dart';
 import '../utils/download_manager.dart';
 import '../generated/l10n.dart';
 
@@ -655,9 +657,14 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
     );
   }
 
-  /// 打开文件
+  /// 打开文件：优先用系统查看器/播放器（ACTION_VIEW，不弹媒体权限），
+  /// 失败（无应用/文件不存在）再回退 OpenFilex
   Future<void> _openFile(String filePath) async {
     try {
+      if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
+        final opened = NativeCommon().openFileWithViewer(filePath);
+        if (opened) return;
+      }
       final result = await OpenFilex.open(filePath);
       
       switch (result.type) {

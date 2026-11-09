@@ -5,31 +5,50 @@ import UIKit
 /// Bridge implementation for common native APIs
 class CommonBridge: NSObject, NativeCommon {
     private let viewController: UIViewController?
-    
+    /// 保留强引用，避免 UIDocumentInteractionController 被提前释放
+    private var documentInteractionController: UIDocumentInteractionController?
+
     init(viewController: UIViewController? = nil) {
         self.viewController = viewController
         super.init()
     }
-    
+
     func startActivityFromUri(intentUri: String) throws -> Bool {
         print("[CommonBridge] startActivityFromUri: \(intentUri)")
-        
+
         guard let url = URL(string: intentUri) else {
             print("[CommonBridge] Invalid URL: \(intentUri)")
             return false
         }
-        
+
         // Check if the URL can be opened
         guard UIApplication.shared.canOpenURL(url) else {
             print("[CommonBridge] Cannot open URL: \(intentUri)")
             return false
         }
-        
+
         // Open the URL
         UIApplication.shared.open(url, options: [:]) { success in
             print("[CommonBridge] Open URL result: \(success)")
         }
-        
+
+        return true
+    }
+
+    /// 用系统预览器（Quick Look）打开本地文件，无需任何权限
+    func openFileWithViewer(path: String) throws -> Bool {
+        let fileManager = FileManager.default
+        guard fileManager.fileExists(atPath: path) else {
+            print("[CommonBridge] openFileWithViewer: file not found \(path)")
+            return false
+        }
+        let url = URL(fileURLWithPath: path)
+        DispatchQueue.main.async { [weak self] in
+            let controller = UIDocumentInteractionController(url: url)
+            controller.delegate = self
+            controller.presentPreview(animated: true)
+            self?.documentInteractionController = controller
+        }
         return true
     }
     
@@ -120,5 +139,15 @@ class CommonBridge: NSObject, NativeCommon {
                 }
             }
         }
+    }
+}
+
+// MARK: - UIDocumentInteractionControllerDelegate
+extension CommonBridge: UIDocumentInteractionControllerDelegate {
+    func documentInteractionControllerViewControllerForPreview(
+        _ controller: UIDocumentInteractionController
+    ) -> UIViewController {
+        viewController ?? UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController
+            ?? UIViewController()
     }
 }

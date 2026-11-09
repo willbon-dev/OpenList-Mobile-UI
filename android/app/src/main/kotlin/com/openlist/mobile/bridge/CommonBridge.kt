@@ -19,6 +19,30 @@ class CommonBridge(private val context: Context) : GeneratedApi.NativeCommon {
         }
     }
 
+    /// 用系统查看器/播放器打开本地文件：
+    /// ACTION_VIEW + FileProvider content URI + MIME 类型，
+    /// 全程不需要媒体权限（本应用持有存储授权 + URI 只读授权）
+    override fun openFileWithViewer(path: String): Boolean {
+        return try {
+            val file = java.io.File(path)
+            if (!file.exists()) return false
+            val uri = androidx.core.content.FileProvider.getUriForFile(
+                context, context.packageName + ".fileprovider", file)
+            val ext = file.extension.lowercase()
+            val mime = android.webkit.MimeTypeMap.getSingleton()
+                .getMimeTypeFromExtension(ext) ?: "application/octet-stream"
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                setDataAndType(uri, mime)
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            context.startActivity(intent)
+            true
+        } catch (e: Exception) {
+            false
+        }
+    }
+
     override fun getDeviceSdkInt(): Long {
         return Build.VERSION.SDK_INT.toLong()
     }

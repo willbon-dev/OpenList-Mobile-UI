@@ -423,6 +423,12 @@ public class GeneratedApi {
 
     @NonNull 
     Boolean startActivityFromUri(@NonNull String intentUri);
+    /**
+     * 用系统查看器/播放器直接打开本地文件（ACTION_VIEW + FileProvider），
+     * 不触发媒体权限弹窗；无应用可打开或文件不存在返回 false
+     */
+    @NonNull 
+    Boolean openFileWithViewer(@NonNull String path);
 
     @NonNull 
     Long getDeviceSdkInt();
@@ -462,6 +468,29 @@ public class GeneratedApi {
                 String intentUriArg = (String) args.get(0);
                 try {
                   Boolean output = api.startActivityFromUri(intentUriArg);
+                  wrapped.add(0, output);
+                }
+ catch (Throwable exception) {
+                  wrapped = wrapError(exception);
+                }
+                reply.reply(wrapped);
+              });
+        } else {
+          channel.setMessageHandler(null);
+        }
+      }
+      {
+        BasicMessageChannel<Object> channel =
+            new BasicMessageChannel<>(
+                binaryMessenger, "dev.flutter.pigeon.openlist_mobile.NativeCommon.openFileWithViewer" + messageChannelSuffix, getCodec());
+        if (api != null) {
+          channel.setMessageHandler(
+              (message, reply) -> {
+                ArrayList<Object> wrapped = new ArrayList<>();
+                ArrayList<Object> args = (ArrayList<Object>) message;
+                String pathArg = (String) args.get(0);
+                try {
+                  Boolean output = api.openFileWithViewer(pathArg);
                   wrapped.add(0, output);
                 }
  catch (Throwable exception) {
