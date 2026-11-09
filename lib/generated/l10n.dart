@@ -2899,6 +2899,11 @@ class S {
     return Intl.message('网页', name: 'webPage', desc: '', args: []);
   }
 
+  /// `网页`
+  String get webTab {
+    return Intl.message('网页', name: 'webTab', desc: '', args: []);
+  }
+
   /// `密码错误`
   String get wrongPassword {
     return Intl.message('密码错误', name: 'wrongPassword', desc: '', args: []);

@@ -835,6 +835,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "The embedded web browser is stopped",
     ),
     "webPage": MessageLookupByLibrary.simpleMessage("Web Page"),
+    "webTab": MessageLookupByLibrary.simpleMessage("Web"),
     "wrongPassword": MessageLookupByLibrary.simpleMessage("Wrong password"),
   };
 }

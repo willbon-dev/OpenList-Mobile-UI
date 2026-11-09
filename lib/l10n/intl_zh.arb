@@ -802,5 +802,6 @@
   "webBrowserStatus": "内置网页浏览器",
   "webBrowserStopped": "内置网页浏览器已停止",
   "webPage": "网页",
+  "webTab": "网页",
   "wrongPassword": "密码错误"
 }

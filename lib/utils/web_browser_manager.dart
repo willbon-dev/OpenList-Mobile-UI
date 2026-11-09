@@ -11,7 +11,8 @@ class WebBrowserManager {
 
   static final instance = WebBrowserManager._();
 
-  final enabled = true.obs;
+  /// 默认关闭内置网页浏览器；开关打开后底部导航才出现网页 Tab
+  final enabled = false.obs;
   final running = false.obs;
 
   WebBrowserAction? _stopAction;
@@ -22,7 +23,7 @@ class WebBrowserManager {
 
   Future<void> initialize() async {
     _preferences = await SharedPreferences.getInstance();
-    enabled.value = _preferences.getBool('web_browser_enabled') ?? true;
+    enabled.value = _preferences.getBool('web_browser_enabled') ?? false;
   }
 
   void register({

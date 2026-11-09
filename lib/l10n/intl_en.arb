@@ -802,5 +802,6 @@
   "webBrowserStatus": "Embedded web browser",
   "webBrowserStopped": "The embedded web browser is stopped",
   "webPage": "Web Page",
+  "webTab": "Web",
   "wrongPassword": "Wrong password"
 }

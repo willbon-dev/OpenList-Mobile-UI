@@ -170,6 +170,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
               );
             },
           ),
+          // 启用开关在前：打开后底部导航才会多出"网页"Tab
+          SwitchPreference(
+            title: S.of(context).enableWebBrowser,
+            subtitle: S.of(context).enableWebBrowserDesc,
+            icon: const Icon(Icons.web_asset),
+            value: WebBrowserManager.instance.enabled.value,
+            onChanged: WebBrowserManager.instance.setEnabled,
+          ),
           BasicPreference(
             title: S.of(context).webBrowserStatus,
             subtitle: WebBrowserManager.instance.running.value
@@ -182,13 +190,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     child: Text(S.of(context).stopWebBrowser),
                   )
                 : null,
-          ),
-          SwitchPreference(
-            title: S.of(context).enableWebBrowser,
-            subtitle: S.of(context).enableWebBrowserDesc,
-            icon: const Icon(Icons.web_asset),
-            value: WebBrowserManager.instance.enabled.value,
-            onChanged: WebBrowserManager.instance.setEnabled,
           ),
 
           // Data directory setting - only for Android

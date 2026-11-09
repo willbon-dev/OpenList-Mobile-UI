@@ -6,6 +6,7 @@ import 'package:openlist_mobile/pages/openlist/openlist.dart';
 import 'package:openlist_mobile/pages/app_update_dialog.dart';
 import 'package:openlist_mobile/pages/settings/settings.dart';
 import 'package:openlist_mobile/pages/download_manager_page.dart';
+import 'package:openlist_mobile/pages/web/web.dart';
 import 'package:openlist_mobile/services/auth_service.dart';
 import 'package:openlist_mobile/services/site_manager.dart';
 import 'package:openlist_mobile/utils/download_manager.dart';
@@ -121,6 +122,9 @@ class MyHomePage extends StatelessWidget {
   final String title;
   static const filesPageIndex = 0;
 
+  /// 内置网页 Tab 的索引（仅当开关启用时显示在末位）
+  static const webPageIndex = 4;
+
   /// 两次返回视为退出的时间窗口
   static const _exitConfirmWindow = Duration(seconds: 2);
 
@@ -179,43 +183,55 @@ class MyHomePage extends StatelessWidget {
           () => FadeIndexedStack(
             lazy: true,
             index: controller.selectedIndex.value,
-            children: [
-              const FilesScreen(),
-              const OpenListScreen(),
-              const DownloadManagerPage(),
-              const SettingsScreen()
+            // 网页 Tab 的显示由设置开关控制（lazy 构建下未启用不会初始化 WebView）
+            children: const [
+              FilesScreen(),
+              OpenListScreen(),
+              DownloadManagerPage(),
+              SettingsScreen(),
+              WebScreen(),
             ],
           ),
         ),
-        bottomNavigationBar: Obx(() => NavigationBar(
-                destinations: [
-                  NavigationDestination(
-                    icon: const Icon(Icons.folder_outlined),
-                    selectedIcon: const Icon(Icons.folder),
-                    label: S.current.filesTab,
+        bottomNavigationBar: Obx(
+          () {
+            final webEnabled = WebBrowserManager.instance.enabled.value;
+            return NavigationBar(
+              destinations: [
+                NavigationDestination(
+                  icon: const Icon(Icons.folder_outlined),
+                  selectedIcon: const Icon(Icons.folder),
+                  label: S.current.filesTab,
+                ),
+                NavigationDestination(
+                  icon: SvgPicture.asset(
+                    "assets/openlist.svg",
+                    color: Theme.of(context).hintColor,
+                    width: 32,
+                    height: 32,
                   ),
+                  label: S.current.appName,
+                ),
+                NavigationDestination(
+                  icon: const Icon(Icons.arrow_downward),
+                  label: _getDownloadLabel(),
+                ),
+                NavigationDestination(
+                  icon: const Icon(Icons.settings),
+                  label: S.current.settings,
+                ),
+                if (webEnabled)
                   NavigationDestination(
-                    icon: SvgPicture.asset(
-                      "assets/openlist.svg",
-                      color: Theme.of(context).hintColor,
-                      width: 32,
-                      height: 32,
-                    ),
-                    label: S.current.appName,
+                    icon: const Icon(Icons.language),
+                    selectedIcon: const Icon(Icons.language),
+                    label: S.current.webTab,
                   ),
-                  NavigationDestination(
-                    icon: const Icon(Icons.arrow_downward),
-                    label: _getDownloadLabel(),
-                  ),
-                  NavigationDestination(
-                    icon: const Icon(Icons.settings),
-                    label: S.current.settings,
-                  ),
-                ],
-                selectedIndex: controller.selectedIndex.value,
-                onDestinationSelected: (int index) {
-                  controller.setPageIndex(index);
-                })),
+              ],
+              selectedIndex: controller.selectedIndex.value,
+              onDestinationSelected: controller.setPageIndex,
+            );
+          },
+        ),
       ),
     );
   }
@@ -242,6 +258,14 @@ class _MainController extends GetxController {
 
   @override
   void onInit() async {
+    // 关闭内置网页浏览器时，若正停在网页 Tab 则回到文件页
+    ever<bool>(WebBrowserManager.instance.enabled, (enabled) {
+      if (!enabled &&
+          selectedIndex.value == MyHomePage.webPageIndex) {
+        selectedIndex.value = MyHomePage.filesPageIndex;
+      }
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       if (await NativeBridge.appConfig.isAutoCheckUpdateEnabled()) {
         AppUpdateDialog.checkUpdateAndShowDialog(Get.context!, null);

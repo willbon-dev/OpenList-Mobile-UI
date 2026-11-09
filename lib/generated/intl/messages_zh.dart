@@ -634,6 +634,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "webBrowserStatus": MessageLookupByLibrary.simpleMessage("内置网页浏览器"),
     "webBrowserStopped": MessageLookupByLibrary.simpleMessage("内置网页浏览器已停止"),
     "webPage": MessageLookupByLibrary.simpleMessage("网页"),
+    "webTab": MessageLookupByLibrary.simpleMessage("网页"),
     "wrongPassword": MessageLookupByLibrary.simpleMessage("密码错误"),
   };
 }

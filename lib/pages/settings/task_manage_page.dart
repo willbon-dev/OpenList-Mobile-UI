@@ -23,7 +23,6 @@ class _TaskManagePageState extends State<TaskManagePage>
   String? _error;
   List<TaskInfo> _undone = [];
   List<TaskInfo> _done = [];
-  DateTime? _lastLoad;
 
   @override
   void initState() {
@@ -58,7 +57,6 @@ class _TaskManagePageState extends State<TaskManagePage>
         _done = done;
         _loading = false;
         _error = null;
-        _lastLoad = DateTime.now();
       });
     } catch (e) {
       if (!mounted) return;
@@ -131,10 +129,13 @@ class _TaskManagePageState extends State<TaskManagePage>
         ],
         bottom: TabBar(
           controller: _tabCtrl,
-          isScrollable: true,
+          // 五个短标签一屏放得下，均分宽度使文字居中（滚动模式会靠左堆积）；
+          // 收窄 labelPadding 避免"离线下载"四字在 1/5 宽度下被裁
+          isScrollable: false,
+          labelPadding: const EdgeInsets.symmetric(horizontal: 8),
           tabs: [
             for (final cat in TaskCategory.values)
-              Tab(text: '${cat.label}'),
+              Tab(text: cat.label),
           ],
         ),
       ),
