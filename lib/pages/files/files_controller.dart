@@ -23,8 +23,6 @@ import 'preview/image_preview_page.dart';
 import 'preview/text_preview_page.dart';
 import 'preview/video_player_page.dart';
 
-const int kFilesPerPage = 50;
-
 /// 文件排序方式
 enum FileSortMode { name, modified, type }
 
@@ -44,8 +42,7 @@ class FilesController extends GetxController {
   final canWrite = false.obs;
 
   final _passwords = <String, String>{}; // 目录密码缓存（仅内存）
-  int _page = 1;
-  bool _noMore = false;
+  bool _noMore = true; // 目录一次性全量加载，无更多分页
 
   // 多选
   final selectionMode = false.obs;
@@ -343,22 +340,21 @@ class FilesController extends GetxController {
     error.value = null;
     loading.value = true;
     try {
+      // 不传 per_page：服务端按全量返回（per_page<1 → MaxInt），
+      // 拿到完整列表后本地排序才是真正的全局排序（分页拼接会导致跨页乱序）
       final result = await Get.find<AuthService>().execute<FsListResult>(
         s,
         (client) => client.fsList(
           p,
           password: _passwords[p],
           refresh: refresh,
-          page: 1,
-          perPage: kFilesPerPage,
         ),
       );
       path.value = p;
-      _page = 1;
-      _noMore = false;
       items.assignAll(_sorted(result.content));
       total.value = result.total;
       canWrite.value = result.write;
+      _noMore = true;
       selectionMode.value = false;
       selected.clear();
     } on PasswordRequiredException {
@@ -375,18 +371,13 @@ class FilesController extends GetxController {
       if (otp != null) {
         final result = await Get.find<AuthService>().execute<FsListResult>(
           s,
-          (client) => client.fsList(p,
-              password: _passwords[p],
-              refresh: refresh,
-              page: 1,
-              perPage: kFilesPerPage),
+          (client) => client.fsList(p, password: _passwords[p]),
           otpCode: otp,
         );
         path.value = p;
-        _page = 1;
-        _noMore = false;
         items.assignAll(_sorted(result.content));
         total.value = result.total;
+        _noMore = true;
       }
     } catch (e) {
       error.value = e.toString();
@@ -398,35 +389,7 @@ class FilesController extends GetxController {
   }
 
   Future<void> loadMore() async {
-    final s = site.value;
-    if (s == null || loadingMore.value || _noMore || searchMode.value) return;
-    loadingMore.value = true;
-    try {
-      final result = await Get.find<AuthService>().execute<FsListResult>(
-        s,
-        (client) => client.fsList(
-          path.value,
-          password: _passwords[path.value],
-          page: _page + 1,
-          perPage: kFilesPerPage,
-        ),
-      );
-      _page++;
-      items.addAll(_sorted(result.content, excludeLoaded: true));
-      if (result.content.isEmpty ||
-          (result.total > 0 && items.length >= result.total)) {
-        _noMore = true;
-      }
-      total.value = result.total;
-    } on SessionExpiredException {
-      // execute 内部已重试过一次；再失败说明凭据有问题
-      error.value = S.current.sessionExpired;
-    } catch (e) {
-      NativeBridge.common.longToast(S.current.operationFailed(e.toString()));
-      _noMore = true;
-    } finally {
-      loadingMore.value = false;
-    }
+    // 目录已一次性全量加载，无需分页；保留空实现兼容旧调用点
   }
 
   Future<void> refreshCurrent() => loadDirectory(path.value, refresh: true);
