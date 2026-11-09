@@ -662,7 +662,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
   Future<void> _openFile(String filePath) async {
     try {
       if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
-        final opened = NativeCommon().openFileWithViewer(filePath);
+        final opened = await NativeCommon().openFileWithViewer(filePath);
         if (opened) return;
       }
       final result = await OpenFilex.open(filePath);
