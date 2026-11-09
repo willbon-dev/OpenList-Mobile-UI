@@ -11,7 +11,15 @@ class StorageInfo {
   int get id => (raw['id'] as num?)?.toInt() ?? 0;
   String get mountPath => raw['mount_path'] as String? ?? '';
   String get driver => raw['driver'] as String? ?? '';
-  String get addition => raw['addition'] as String? ?? '{}';
+
+  /// addition 兼容两种形态：服务端记录为 JSON 字符串，
+  /// 导出的配置（二维码/JSON）为内嵌对象
+  String get addition {
+    final v = raw['addition'];
+    if (v is String) return v;
+    if (v != null) return jsonEncode(v);
+    return '{}';
+  }
   String get remark => raw['remark'] as String? ?? '';
   String get status => raw['status'] as String? ?? '';
   bool get disabled => raw['disabled'] as bool? ?? false;

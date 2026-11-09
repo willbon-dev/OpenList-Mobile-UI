@@ -117,7 +117,7 @@ class _StorageManagePageState extends State<StorageManagePage> {
       if (decoded is! Map<String, dynamic> || !decoded.containsKey('driver')) {
         throw const FormatException('not a storage config');
       }
-      await _openEditor(existing: StorageInfo(decoded));
+      await _openEditor(existing: _asImportConfig(decoded));
     } catch (e) {
       Get.showSnackbar(GetSnackBar(
           message: S.current.qrInvalid,
@@ -134,12 +134,19 @@ class _StorageManagePageState extends State<StorageManagePage> {
       if (decoded is! Map<String, dynamic> || !decoded.containsKey('driver')) {
         throw const FormatException('not a storage config');
       }
-      await _openEditor(existing: StorageInfo(decoded));
+      await _openEditor(existing: _asImportConfig(decoded));
     } catch (e) {
       Get.showSnackbar(GetSnackBar(
           message: S.current.jsonInvalid,
           duration: const Duration(seconds: 3)));
     }
+  }
+
+  /// 导入的配置一律视为新建：去掉服务端生成的 id，
+  /// 编辑页据此走 create 而不是 update（否则 update 无 id 会报 record not found）
+  StorageInfo _asImportConfig(Map<String, dynamic> decoded) {
+    final map = Map<String, dynamic>.from(decoded)..remove('id');
+    return StorageInfo(map);
   }
 
   @override
@@ -307,6 +314,10 @@ class _StorageEditPageState extends State<_StorageEditPage> {
 
   /// common 中由专用控件处理的字段，其余 common 字段动态渲染
   static const _dedicatedCommon = {'mount_path', 'remark', 'order'};
+
+  /// 是否在编辑服务端已有记录：以 raw 中是否带服务端生成的 id 判定。
+  /// 扫码/JSON 导入的配置没有 id，虽然作为 existing 传入用于预填，但保存时走新建。
+  bool get _isEdit => widget.existing?.raw['id'] != null;
 
   @override
   void initState() {
@@ -574,7 +585,8 @@ class _StorageEditPageState extends State<_StorageEditPage> {
       return;
     }
 
-    final body = widget.existing?.raw != null
+    // 编辑已有记录时回传原始全量字段（update 需要）；导入/新建用干净的默认值
+    final body = _isEdit
         ? Map<String, dynamic>.from(widget.existing!.raw)
         : <String, dynamic>{
             'cache_expiration': 30,
@@ -598,16 +610,11 @@ class _StorageEditPageState extends State<_StorageEditPage> {
 
     setState(() => _saving = true);
     try {
-      await AuthService.to.execute(widget.site, (c) {
-        return widget.existing != null
-            ? c.adminUpdateStorage(body)
-            : c.adminCreateStorage(body);
-      });
+      await AuthService.to
+          .execute(widget.site, (c) => _isEdit ? c.adminUpdateStorage(body) : c.adminCreateStorage(body));
       if (!mounted) return;
       Get.showSnackbar(GetSnackBar(
-          message: widget.existing != null
-              ? S.current.saveSuccess
-              : S.current.mountSuccess,
+          message: _isEdit ? S.current.saveSuccess : S.current.mountSuccess,
           duration: const Duration(seconds: 2)));
       Navigator.of(context).pop(true);
     } catch (e) {
@@ -627,9 +634,7 @@ class _StorageEditPageState extends State<_StorageEditPage> {
     final info = _driverInfo;
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.existing != null
-            ? S.current.editStorage
-            : S.current.mountStorage),
+        title: Text(_isEdit ? S.current.editStorage : S.current.mountStorage),
         actions: [
           IconButton(
               tooltip: S.current.qrImport,
